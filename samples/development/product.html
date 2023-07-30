@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<link href="styles\sProduct.css" rel="stylesheet" type="text/css">
+		<script src="scripts\xPhotos.js"></script>
+		<title>Product</title>
+	</head>
+
+	<body>
+		<header>
+			<nav>
+				<a class="link aux" href="#">Men's</a>
+				<a class="link aux" href="#">Women's</a>
+				<a class="link aux" href="#">Account</a>
+				<a class="link aux" href="#">Cart</a>
+				<a class="link home" href="#"><img id="logo" src="media\tbb_logo.png" alt="Company Logo"></a>
+			</nav>
+		</header>
+		
+		<article>
+			<div id="product-details">
+				<div id="product-display">
+					<div id="p-img"></div>
+
+					<div id="product-imgs">
+						<img class="product-img" src="media\summer1.jpg" alt="First image" onclick="changePhoto(0)">
+						<img class="product-img" onclick="changePhoto(1)" src="media\summer2.jpg" alt="Second image">
+						<img class="product-img" onclick="changePhoto(2)" src="media\summer3.jpg" alt="Third image">
+						<img class="product-img" onclick="changePhoto(3)" src="media\summer4.jpg" alt="Fourth image">
+						<img class="product-img" onclick="changePhoto(4)" src="media\summer5.jpg" alt="Fifth image">
+					</div>
+				</div>
+				
+				<p>This is where you add a little snippet about the product you're selling!</p>
+				<details>
+					<summary>Learn more...</summary>
+					<p>
+						And <i>this</i> is where you add more details about the product in question. 
+						If you'd like, go ahead and add the products specs to this section. Things 
+						like material, color (or color options), interfaces for your electronic items,
+						volume for liquids, weight, can all be nested in this section!
+					</p>
+				</details>
+			</div>
+			
+			<div id="product-panel">
+				<table>
+					<tr><th colspan="4">Unrestrained Summer Fun!</th></tr>
+					<tr>
+						<td colspan="2"><label for="quantity">Quantity: </label></td>
+						<td><input type="number" value="1"></td>
+					</tr>
+					<tr><td colspan="2">Choose a size:</td></tr>
+					<tr>
+						<td colspan="4">
+							<input id="small" type="radio" name="size" value="small" checked>
+							<label for="small">small</label>						
+							<input id="medium" type="radio" name="size" value="medium">
+							<label for="medium">medium</label>
+							<input id="large" type="radio" name="size" value="large">
+							<label for="large">large</label>
+							<input id="xlarge" type="radio" name="size" value="xlarge">
+							<label for="xlarge">extra large</label>
+						</td>
+					</tr>
+					<tr><td><output>&dollar;0.00</output></td></tr>
+					<tr>
+						<td><button type="button">Add to Cart</button></td>
+						<td><button type="button">Add to Wishlist</button></td>
+					</tr>
+				</table>
+			</div>
+		</article>
+		
+		<section>
+			<h2>Want more online traffic?</h2>
+			<p>Add a little section about other products down here!</p>
+			<div id="other-items">
+				<img src="media\photographer.jpg" alt="">
+				<img src="media\space.jpg" alt="">
+				<img src="media\interior-deco.jpg" alt="">
+				<img src="media\notebook.jpg" alt="">
+				<img src="media\closed.jpg" alt="">
+				<img src="media\bathroom.jpg" alt="">
+				<img src="media\city_train.jpg" alt="">
+				<img src="media\route_66.jpg" alt="">
+			</div>
+		</section>
+		
+		<footer>
+			<table>
+				<tr><th>Shopping</th></tr>
+				<tr><td><a href="#">Men's</a></td></tr>
+				<tr><td><a href="#">Women's</a></td></tr>
+				<tr><td><a href="#">Account</a></td></tr>
+				<tr><td><a href="#">Sales!</a></td></tr>
+			</table>
+			
+			<table>
+				<tr><th>Company</th></tr>
+				<tr><td><a href="#">About</a></td></tr>
+				<tr><td><a href="#">Customer Service</a></td></tr>
+				<tr><td><a href="#">Careers</a></td></tr>
+				<tr><td><a href="#">Sitemap</a></td></tr>
+			</table>
+			
+			<table>
+				<tr><th>Legal</th></tr>
+				<tr><td><a href="#">Privacy Policy</a></td></tr>
+				<tr><td><a href="#">Terms &amp; Conditions</a></td></tr>
+			</table>
+			
+			<table>
+				<tr><th>Affiliates</th></tr>
+				<tr><td><a href="#">Partners</a></td></tr>
+				<tr><td><a href="#">Become an Affiliate!</a></td></tr>
+			</table>
+			
+			<p id="company">&copy;2022 The Brown Bag</p>
+		</footer>
+	</body>
+</html>

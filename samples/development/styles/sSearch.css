@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+html {
+	background: url(..\\media\\interior-deco.jpg) 100% 100% / 100% fixed no-repeat;
+}
+body, #blog-content {
+	display: flex;
+}
+header, footer {
+	flex: initial;
+}
+nav a:hover, footer a:hover {
+	text-decoration: underline 2px brown;
+	color: #9f6f00;
+}
+nav, nav a, footer, #search-bar {
+	display: grid;
+}
+nav, footer {
+	grid-auto-flow: column;
+}
+#content, #blog-content {
+	color: #fff;	
+}
+body {
+	flex-direction: column;
+	min-height: 100vh;
+	margin: 0;
+}
+header {
+	background-color: #fffa;
+}
+article {
+	flex: 85%;
+}
+h1 {
+	text-align: center;
+	text-shadow: 0px 1px 3px #fff;
+}
+nav {
+	align-items:center;
+	padding: 0% 2%;
+}
+nav a {
+	text-decoration: none;
+	color: black;
+	height: 100%;
+	align-content: center;
+}
+footer {
+	padding: 2% 2%;
+	align-items: center;
+	color: #fff;
+	background-color: #000;
+}
+footer a {
+	text-decoration: none;
+	color: white;
+}
+#name {
+	float: right;
+	display: grid;
+	justify-items: center;
+}
+#name img {
+	height: 75px;
+	border: 1px dotted #000;
+}
+#search-bar {
+	align-content: center;
+	justify-content: center;
+	grid-auto-flow: column;
+	border-radius: 10px;
+}
+#content {
+	text-shadow: 1px 2px 3px #000;
+}
+#blog-content {
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.blog-post {
+	flex: 1 1 33%;
+	background-color: #9f6f00a0;
+	margin: 10px;
+	border-radius: 5px;
+	padding: 0% 2%;
+}
+.blog-post:hover {
+	box-shadow: 1px 2px 3px #000;
+}
+.blog-post figure{
+	display: grid;
+	justify-items: center;
+}
+.blog-post img {
+	height: 150px;
+	width: 225px;
+	object-fit: cover;
+	object-position: center;
+}
+.blog-post figcaption {
+	font-weight: bold;
+	text-align: center;
+}
+
+
+@media screen and (max-width: 479px) {
+	article {text-align: center;}
+	nav a {
+		text-align: center;
+		margin: 3px;
+	}
+		#name {margin: 5px 0px;}
+	nav figcaption {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+	nav {padding: 0; justify-content: space-evenly;}
+	article {padding: 0px 15px;}
+	#blog-content {
+
+	}
+}

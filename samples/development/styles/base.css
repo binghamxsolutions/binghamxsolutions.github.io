@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+:root {
+    /*insert universal constants here. Remember to add a double dash before custom variable names*/
+    --primaryColor: #000;
+    --mainImage: url(..\picture\url.png);
+}
+
+@font-face {
+    font-family: Typed;
+    src: url(fonts\\Cutive_Mono\\CutiveMono-Regular.ttf);
+} 
+
+/*GENERAL STYLE*/
+html, body {
+    height: 100%;
+}
+body {
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    background-color: var(--primaryColor);
+    display: flex;
+	flex-direction: column;
+}
+header, footer {
+    flex: 1;
+	background-color: black;
+	color: white;
+}
+h1 {
+	text-align: center;
+}
+#dev-ref {
+    font: normal 1em/1.5em Typed, mononspace;
+} 
+.header, .footer {
+    margin: 0px;
+    text-align: center;
+	flex: 1;
+}
+.content {
+    flex: 80%;
+}
+.header, .content, .footer {
+    display: flex;
+    width: 100%;
+}
+
+
+
+@media screen and (max-width: 479px) {
+	.content {
+		flex-direction: column;
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+	
+}

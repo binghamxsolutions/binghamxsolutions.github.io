@@ -1,0 +1,168 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: Typed;
+	src: url(fonts\\Cutive_Mono\\CutiveMono-Regular.ttf);
+}
+
+html, body {height: 100vh;}
+body, article, #services {display: flex;}
+body, article {flex-direction: column;}
+header, footer {flex: 1;}
+header, article h1, #testimonials, .service {display: grid;}
+#callout, #close {background-color: #a04007;}
+
+html {
+	scroll-behavior: smooth;
+}
+body {
+	margin: 0;
+}
+
+header {
+	justify-items: center;
+	align-items: center;
+	background-color: #383e79;
+	padding: 2%;
+}
+header a {
+	color: #fff;
+	text-decoration: none;
+	margin: 10px;
+	transition: .3s;
+}
+header a:hover {
+	color: #000;
+	font-size: 1.15em;
+	text-decoration: 2px underline;
+}
+
+article {
+	flex-direction: column;
+	flex: 85%;
+}
+#overview {
+	background: #f73 url(..\\media\\teamwork.jpg) 50% / 100% fixed  no-repeat;
+	min-height: 200px;
+	text-align: center;
+	color: #fff;
+	font-size: 1.15em;
+	font-weight: bold;
+	text-shadow: 1px 1px 10px #f73, 1px 1px #000;
+}
+#overview a{
+	color: #fff;
+	text-decoration: none;
+	text-shadow: 1px 1px 10px #000, 1px 1px #f73;
+	transition: .5s;
+}
+#overview a:hover {
+	color: #000;
+	text-shadow: 1px 1px 10px #f73;
+	font-weight: bold;
+	font-size: 2em;
+}
+#services {
+	flex-wrap: wrap;
+}
+.service {
+	margin: 10px;
+	flex: 1;
+	background-color: #f737;
+	padding: 2%;
+}
+.service:hover {
+	box-shadow: 1px 2px 3px black;	
+}
+.service img {
+	object-fit: contain;
+	height: 200px;
+	width: 100%;
+	background-color: #fff;
+}
+#pressMe {
+	border: none;
+	background-color: #000;
+	color: #fff;
+	width: 100%;
+}
+#pressMe:hover {
+	background-color: #fff;
+	color: #000;
+}
+#callout {
+	width: 300px;
+	margin: auto;
+	display: none;
+	border: 1px black solid;
+	color: #fff;
+	position: fixed;
+	align-content: center;
+	left: 0;
+	right: 0;
+	box-shadow: 1px 2px 5px #10a;
+}
+#callout span {
+	height: 100%;
+}
+#close {
+	float: right;
+	border: none;
+	height: 100%;
+	font-weight: bold;
+	color: #000;
+	font-size: 1.15em;
+	position: relative;
+	bottom: 7px;
+}
+#close:hover {
+	color: #FFF;
+}
+#message {
+	padding: 0em 2%;
+	background-color: #fff9;
+	color: #000;
+}
+
+#testimonials {
+	height: 150px;
+	grid-auto-flow: column;
+	align-items: center;
+	background-color: #7a7a7a75;
+}
+#testimonials span img:hover {
+	background-color: #7a1a00;
+}
+.testimonial {
+	justify-items: center;
+	display: none;
+}
+
+footer {
+	background-color: #a04007;
+	color: #fff;
+}
+footer p {
+	font: normal 1em/1em Typed, monospace;
+}
+
+
+@media screen and (max-width: 479px) {
+	header a:hover {font-size: initial;}
+	#overview {background-size: cover;}
+	.service {flex: 33%;}
+	#testimonials {height: 300px;}
+	footer {
+		padding: 0% 2%;
+		text-align: center;
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+	.service {flex: 33%;}
+	#testimonials {min-height: 200px;}
+	footer {
+		padding: 0% 2%;
+		text-align: right;
+	}
+}

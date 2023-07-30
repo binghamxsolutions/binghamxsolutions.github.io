@@ -1,0 +1,185 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: Typed;
+	src: url(fonts/Cutive_Mono/CutiveMono-Regular.ttf);
+}
+@font-face {
+	font-family: Label;
+	src: url(fonts\\Gruppo\\Gruppo-Regular.ttf);
+}
+
+html, body {min-height:100vh;}
+body, header, article, #menu, #info, #profile, #profile figure, #message form, #form-content, .navigation, .navigation nav, #message, #labels, #social, #fields, footer {display: grid;}
+article, aside {padding: 0% 2%;}
+
+.navigation, #profile, #profile figure {justify-items: center;}
+article, #info, #profile figure {align-items: center;}
+body, #info, #form-content, #social {grid-auto-flow: column;}
+body, header, #form-content {grid-template-columns: max-content auto;}
+#message form {grid-template-rows: max-content auto;}
+#info, #social {column-gap: 20px;}
+body, .title {margin: 0;}
+
+body {
+	background: #f00 url("../media/letter.jpg") center / cover fixed no-repeat;
+	background-color: #f00;
+}
+
+header {
+	background-color: #000;
+	transform: none;
+	transition: transform 2s ease-in;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+	z-index: 10;
+}
+.navigation {
+	color: #fff;
+	text-align: center;
+	position: relative;
+}
+.navigation nav a {
+	margin: 10px 0px;
+	color: #fff;
+	text-decoration: none;
+	font: normal 1.5em/1em Label, fantasy;
+}
+.navigation nav a:hover {
+	text-shadow: 1px 1px 3px #f00;
+	text-decoration: underline 3px;
+}
+.navigation img {
+	height: 50px;
+}
+.navigation.items {
+	backdrop-filter: invert(5%);
+	align-items: center;
+	transform: rotateY(90deg);
+	width: 0px;
+	transition: width 2s; 
+	text-shadow: 1px 0px 3px #000;
+	z-index: 5;
+	justify-content: center;
+}
+.navigation.empty {transform: rotateY(90deg);}
+.menu {background-color: transparent;}
+.menu:hover {cursor: pointer;}
+#close {
+	font: bold 24px/1em Typed, monospace;
+	color: #fff;
+	border: none;
+	text-shadow: 1px 0px 3px #000;
+}
+
+article {
+	color: #fff;
+	text-shadow: 1px 1px #000,
+		1px 1px 10px #062A53;
+}
+article a {
+	color: #062A53;
+	text-decoration: none;
+	text-shadow: 1px 1px #f09a00ae,
+		1px 1px 10px #fff;
+}
+article a:hover {
+	text-decoration: 3px black dotted underline;
+}
+article h1 {font-family: Typed; text-align: right;}
+
+
+#profile img {
+	object-fit: cover;
+	object-position: center;
+	border-radius: 50%;
+	box-shadow: 0px 0px 5px #062A53, 
+		0px 0px 10px #fff;
+}
+#profile {
+	background-color: #3477;
+	backdrop-filter: blur(10px);
+	border-radius: 50px;
+	box-shadow: 1px 1px 2px #000;
+}
+#avatar {
+	width: 150px;
+	height: 150px;	
+}
+#card {
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	position: relative;
+	bottom: 25%;
+	padding: 5%;
+}
+.title {
+	font-size: 24px;
+	color: #000;
+	text-shadow: 1px 0px 3px #00f, 
+		4px 3px 5px #fff;
+}
+.social {
+	height: 48px;
+	width: auto;
+}
+.social:hover {
+	filter: invert(30%);
+}
+
+#message {
+	backdrop-filter: blur(10px);
+	background-color: #fff9;
+	border-radius: 10px;
+	padding: 10%;
+}
+#message h2 {text-align: center; margin: 0;}
+#message button {border: none;}
+#form-content {	column-gap: 15px;}
+#labels, #fields {grid-auto-flow: row;}
+
+footer {
+	font: normal 1.15em/1em Typed, monospace;
+	align-content: center
+}
+
+@media screen and (max-width: 479px) {
+	body, #info {grid-auto-flow: row; row-gap: 15px; column-gap: 0px;}
+	body {grid-template-columns: initial;}
+	header {perspective: none; transform-origin: top;
+}
+		.navigation.items {
+			backdrop-filter: initial;
+			background-color: tomato;
+			width: 100vw;
+			height: 100vh;
+			transform: rotateX(90deg);
+			position: fixed;
+			transform-origin: top;
+		}
+	
+	#profile {border-radius: 15px;}
+		#card {position: unset; bottom: 0px;}
+	
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+	.navigation {
+		position: absolute;
+	}
+	header {perspective: none; transform-origin: left; width: fit-content;}
+	.navigation.items {
+		background-color: #0007; 
+		transform-origin: left; 
+		height: 100vh; 
+		width: fit-content;
+		padding: 0px 15px;
+	}
+	body {grid-template-columns: initial;}
+	#info {
+		grid-auto-flow: row;
+		column-gap: 0px;
+		row-gap: 15px;
+	}
+	#card {position: unset; bottom: 0px;}
+}

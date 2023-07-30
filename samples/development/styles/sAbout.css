@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: Pen;
+	src: url(fonts\\Great_Vibes\\GreatVibes-Regular.ttf);
+}
+@font-face {
+	font-family: Brush;
+	src: url(fonts\\Dr_Sugiyama\\DrSugiyama-Regular.ttf);
+}
+html, body {min-height: 100vh;}
+body, #details {display: flex;}
+header, header nav, #test figure {display: grid;}
+header, footer {flex: 1;}
+html {scroll-behavior: smooth;}
+body {
+	background-color: #595F72;
+	flex-direction: column;
+	margin: 0;
+	color: #fff;
+}
+header {
+	display: grid;
+	grid-auto-flow: column;
+	justify-content: space-between;
+	position: sticky;
+	top: 0px;
+	background-color: #fff;
+	border-bottom: groove 1px black;
+}
+header nav {
+	grid-auto-flow: column;
+	align-items: center;}
+header a {
+	font-size: 2em;
+	margin: 10px;
+	text-decoration: none;
+	color: #7f8d43;
+	font-weight: bold;
+	font-family: Brush;
+}
+header a:hover {
+	color: #e7a805;
+}
+article {
+	flex: 85%;
+	padding: 10px;
+}
+h1 {
+	text-align: center;
+}
+footer {
+	background-color: #7f8d43a0;
+	padding: 0px 10px;
+}
+#logo {
+	transition: 2s;	
+	height: 150px;
+}
+#details {
+	flex-direction: row;
+}
+#details section {
+	margin: 10px;
+	flex: 1 1 50%;
+}
+#test figure {
+	justify-items: center;
+}
+#test figcaption {
+	font-weight: bold;
+	font-size: 1.5em;
+}
+#test_pic {
+	width: 70%;
+}
+#toTop {
+	border-radius: 5px;
+	border: none;
+	color: #fff;
+	background-color: #000;
+	font-size: 3em;
+	position: fixed;
+	float: right;
+	bottom: 60px;
+	right: 15px;
+}
+#toTop:hover {
+	background-color: #ea0;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 479px) {
+	header {
+		grid-auto-flow: row;
+		justify-content: center;
+	}
+	#logo-link {
+		display: grid;
+		justify-content: center;
+	}
+	#details {flex-direction: column;}
+}

@@ -1,0 +1,78 @@
+@charset "utf-8";
+@import "base.css";
+
+/*\SHARED STYLES\*/
+@media screen and (max-width: 479px), (min-width: 480px) and (max-width: 767px) {}
+body {background: #fff url(../media/storyboard.jpg) 100% 100% / cover no-repeat fixed; backdrop-filter: blur(5px);}
+
+/*DISPLAY*/
+section, .note, .note span, .tip, .tip span {display: grid;}
+
+/*FLEX STYLES*/
+
+
+/*GRID STYLES*/
+.note, .tip {grid-auto-flow: column;}
+
+
+/*Color*/
+/*?text*/
+/*?background*/
+
+
+/*Alignment*/
+/*?content*/
+.note, .note span, .tip, .tip span {align-content: center;}
+.note, .tip {align-self: flex-end;}
+/*?position*/
+
+/*Sizing*/
+.note, .tip {width: 70%;}
+.note, .tip {font-weight: bold;}
+.note span, .tip span {padding: 0px 10px;}
+
+
+/*\GENERAL STYLES\*/
+article {
+	/*padding: 10% 15%;
+	backdrop-filter: blur(5px);*/
+	justify-content: center;
+	justify-self: center;
+	width: 70%;
+}
+section img {
+	height: 150px;
+	padding: 15px;
+}
+article p {
+	filter: drop-shadow(1px 1px 3px var(--wenge));
+	color: var(--darkPurple);
+}
+article img {filter: drop-shadow(0px 0px 5px var(--fulvous));}
+
+.left {float: left;}
+.right {float: right;}
+
+.note {border: 3px solid var(--silver);}
+.note span {background-color: var(--wenge); color: #fff;}
+.note p, .tip p {
+	background-color: #fff;
+	margin: 0px;
+	padding: 15px;
+	color: var(--fulvous);
+	text-shadow: none;
+}
+.tip {border: 3px solid var(--bone);}
+.tip span {background-color: var(--bone); color: #000;}
+
+
+/*\MOBILE STYLES\*/
+@media screen and (max-width: 479px) {
+	.tip, .note {width: 100%;}
+}
+
+
+/*\TABLET STYLES\*/
+@media screen and (min-width: 480px) and (max-width: 767px) {
+	.tip, .note {width: 100%;}	
+}

@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="assets\styles\sSamples.css" rel="stylesheet" type="text/css">
+		<link href="assets\icons\favicon.ico" rel="icon" type="image/x-icon">
+		<script src="assets/scripts/xPageSelect.js" defer></script>
+		<title>Bingham x Solutions | Samples</title>
+	</head>
+
+	<body>
+		<header>
+			<a id="logo" href="index.html">
+				<img class="desktop" src="assets\media\bxs_logo.png" alt="Bingham x Solutions logo">
+				<img class="mobile" src="assets\media\logotype_combo.png" alt="Bingham x Solutions logo">
+			</a>			
+
+			<nav>
+				<a href="index.html">Home</a>
+				<a href="pricing.html">Pricing</a>
+				<a href="" class="focus">Samples</a>
+				<a href="help.html">Help</a>
+			</nav>
+		</header>
+		
+		<div id="type">
+			<table>
+				<tr>
+					<td class="choice"><button type="button" onclick="showSamples(this)">Design</button></td>
+					<td class="choice"><button type="button" class="active" onclick="showSamples(this)">Development</button></td>
+				</tr>
+			</table>
+		</div>
+		
+		<article id="development">
+			<section class="options desktop">
+				<h3>Choose a Page Type:</h3>
+				<button onclick="showDev('about', this)">About</button>
+				<button onclick="showDev('coming_soon', this)">Coming Soon</button>
+				<button onclick="showDev('contact', this)">Contact</button>
+				<button onclick="showDev('404', this)">Custom 404</button>
+				<button onclick="showDev('product', this)">Product</button>
+				<button onclick="showDev('registration', this)">Registration</button>
+				<button onclick="showDev('search', this)">Search</button>
+				<button onclick="showDev('service', this)">Service</button>
+			</section>
+
+			<select class="options mobile">
+				<option selected disabled>Choose a Page Type</option>
+				<option onclick="showDev('about', this)">About</option>
+				<option onclick="showDev('coming_soon', this)">Coming Soon</option>
+				<option onclick="showDev('contact', this)">Contact</option>
+				<option onclick="showDev('404', this)">Custom 404</option>
+				<option onclick="showDev('product', this)">Product</option>
+				<option onclick="showDev('registration', this)">Registration</option>
+				<option onclick="showDev('search', this)">Search</option>
+				<option onclick="showDev('service', this)">Service</option>
+			</select>
+
+			
+			<section class="result">
+				<iframe id="page" 
+						srcdoc="<article style='text-align:center;'><h1 style='text-align:center;'>Need a few ideas?</h1>
+								<p>Choose an option in the left panel to see page layout examples</p></article>">
+					<p>NOTICE: Your browser does not support iframes</p>
+				</iframe>
+			</section>
+		</article>
+		
+		<article id="design" style="display: none;">
+			<section class="options desktop">
+				<h3>Choose a Design Type:</h3>
+				<button onclick="showDesign('pied_piper', this)">Business Card</button>
+				<button onclick="showDesign('block_bbq', this)">Flyer</button>
+				<button onclick="showDesign('greener_grass', this)">Logo</button>
+				<button onclick="showDesign('the_dog_haus', this)">Web</button>
+			</section>
+			
+			
+			<select class="options mobile">
+				<option selected disabled>Choose a Design Type</option>
+				<option onclick="showDesign('pied_piper', this)">Business Card</option>
+				<option onclick="showDesign('block_bbq', this)">Flyer</option>
+				<option onclick="showDesign('greener_grass', this)">Logo</option>
+				<option onclick="showDesign('the_dog_haus', this)">Web</option>
+			</select>
+			
+			<section class="result">
+				<iframe id="media" 
+						srcdoc="<article style='text-align:center;'><h1 style='text-align:center;'>Need a few ideas?</h1>
+								<p>Choose an option in the left panel to see design examples</p></article>">
+					<p>NOTICE: Your browser does not support iframes</p>
+				</iframe>
+			</section>
+		</article>
+
+		<footer>
+			<p>&copy; 2022 Bingham x Solutions <br> <i>Adding a personal touch to your digital solution</i></p>
+			<a id="support-link" target="_blank" href="https://ko-fi.com/binghamxsolutions">Support me on Ko-fi!</a>
+		</footer>
+	</body>
+</html>

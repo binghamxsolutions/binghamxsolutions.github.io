@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="styles\sContact.css" type="text/css">
+		<script src="scripts\xSubmenu.js"></script>
+		<title>Contact</title>
+	</head>
+
+	<body>
+		<header>
+			<section class="navigation items">
+				<button type="button" class="menu" id="close" onclick="closeMenu()">CLOSE</button>
+				<nav>
+					<a href="#">Home</a>
+					<a href="#">Gallery</a>
+					<a href="#">Process</a>
+					<a href="">Contact</a>
+				</nav>
+				<footer>&copy;2022 Jayce Doe</footer>
+			</section>
+			
+			<div class="navigation menu">
+				<figure class="menu" id="open" onclick="openMenu()">
+					<img src="icons/iMenu_hamburger_white.png" alt="Menu icon">
+					<figcaption>Menu</figcaption>
+				</figure>
+			</div>
+		</header>
+
+		<article>
+			<h1>contact.</h1>
+			<div id="info">
+				<section id="profile">
+					<div id="card">
+						<figure>
+							<img id="avatar" src="media\photographer1.jpg" alt="Jayce Doe">
+							<figcaption>Jayce Doe</figcaption>
+						</figure>
+						<p class="title">Photographer</p>
+						<p class="title">Graphic Designer</p>
+						<p class="title">Video Editor</p>
+						<p>Sunnyvale, CA</p>
+						<p><a href="mailto:jayce_doe@some.co">Email</a> or <a href="tel:8888888889">call</a></p>
+						<div id="social">
+							<a href="#"><img class="social" src="icons/iFacebook_round.png" alt="Facebook Icon"></a>
+							<a href="#"><img class="social" src="icons/iInstagram_round.png" alt="Instagram Icon"></a>
+							<a href="#"><img class="social" src="icons/iTwitter_round.png" alt="Twitter Icon"></a>
+						</div>
+					</div>
+				</section>
+
+				<section id="message">
+					<h2>Message Me</h2>
+					<form>
+						<div id="form-content">
+							<div id="labels">
+								<label for="">Full Name: </label>
+								<label for="">E-mail: </label>
+								<label for="">Message: </label>
+							</div>
+
+							<div id="fields">
+								<input type="text">
+								<input type="text">
+								<textarea></textarea>
+							</div>
+						</div>
+
+						<input type="submit" value="Send">
+					</form>
+				</section>
+			</div>
+		</article>
+	</body>
+</html>

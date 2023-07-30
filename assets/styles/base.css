@@ -1,0 +1,207 @@
+@charset "utf-8";
+
+/*\GLOBAL VALUES\*/
+:root {
+	/**COLORS*/
+	/*primary colors*/
+	--fulvous: #e98a15;
+	--darkPurple: #260c1a;
+	--ebony: #5b5941;
+	
+	/*secondary colors*/
+	--earthYellow: #e8b471;
+	--wenge: #77686c;
+	--battleshipGray: #989683;
+
+
+	/*accent colors*/
+	--bone: #e7decd;
+	--silver: #afa39d;
+	--ashGray: #bdbaa8;
+}
+/*logotype*/
+@font-face {
+	font-family: Elite;
+	src: url(..//fonts//Special_Elite//xxx.ttf);
+}
+
+/*headings*/
+@font-face {
+	font-family: Lv1;
+	src: url(fonts//Poppins//Poppins-Black.ttf);
+}
+h1 {font: normal 48px / 1em Lv1, san-serif;}
+
+@font-face {
+	font-family: Lv2;
+	src: url(fonts//Poppins//Poppins-SemiBold.ttf);
+}
+h2 {font: normal 36px / 1em Lv2, san-serif;}
+
+@font-face {
+	font-family: Lv3;
+	src: url(fonts//Poppins//Poppins-MediumItalic.ttf);
+}
+h3 {font: normal 28px / 1em Lv3, san-serif;}
+
+@font-face {
+	font-family: Lv4;
+	src: url(fonts//Poppins//Poppins-Regular.ttf);
+}
+h4 {font: normal 24px / 1em Lv4, san-serif;}
+
+@font-face {
+	font-family: Lv5;
+	src: url(fonts//Poppins//Poppins-LightItalic.ttf);
+}
+h5 {font: normal 20px / 1em Lv5, san-serif;}
+
+@font-face {
+	font-family: Lv6;
+	src: url(fonts//Poppins//Poppins-ExtraLight.ttf);
+}
+h6 {font: normal 18px / 1em Lv6, san-serif;}
+
+
+/*body*/
+@font-face {
+	font-family: Gentium;
+	src: url(fonts//Gentium_Book_Plus//GentiumBookPlus-Regular.ttf);
+}
+body {font: normal 16px / 1em Gentium, serif;}
+
+
+
+/**DEPRECATED*/
+@font-face {
+	font-family: Typed;
+	src: url(..\\fonts\\Cutive_Mono\\CutiveMono-Regular.ttf);
+}
+@font-face {
+	font-family: Name;
+	src: url(..\\fonts\\Dr_Sugiyama\\DrSugiyama-Regular.ttf);
+}
+@font-face {
+	font-family: Label;
+	src: url(..\\fonts\\Special_Elite\\SpecialElite-Regular.ttf);
+}
+@font-face {
+	font-family: Header;
+	src: url(..\\fonts\\Love_Light\\LoveLight-Regular.ttf);
+}
+@font-face {
+	font-family: Glitch;
+	src: url(..\\fonts\\Rubik_Glitch\\RubikGlitch-Regular.ttf);
+}
+
+
+
+/*\SHARED STYLES\*/
+@media screen and (max-width: 479px), (min-width: 480px) and (max-width: 767px) {}
+html, body {min-height: 100vh;}
+
+/*DISPLAY*/
+body {display: grid;}
+header, header nav, article {display: grid;}
+
+/*GRID STYLES*/
+header nav {align-content: center;}
+header, header nav {grid-auto-flow: column;}
+
+
+body {grid-template-rows: max-content auto max-content;}
+header, header nav {align-items: center;}
+
+/*Color*/
+/*?text*/
+/*?background*/
+
+
+/*Alignment*/
+h1, footer {text-align: center;}
+/*?content*/
+/*?position*/
+
+body, footer {margin: 0px;}
+
+
+/*\GENERAL STYLES\*/
+html {scroll-behavior: smooth;}
+.to-top {
+	display: none;
+	position: sticky;
+	background-color: var(--bone);
+	font-weight: bold;
+	font-size: 24px;
+	padding: 15px;
+	border-radius: 10px;
+	bottom: 75px;
+	right: 1%;
+	box-shadow: 2px 2px 5px #000;
+	color: #000;
+	z-index: 10;
+	width: fit-content;
+	justify-self: right;
+}
+.to-top:hover {
+	background-color: var(--silver);
+}
+.focus {
+	font-weight: bold;
+	text-decoration: 2px underline;
+}
+a {text-decoration: none;}
+p {padding: 0% 20px;}
+header {
+	background-color: var(--darkPurple);
+	position: sticky;
+	top: 0px;	
+	padding: 15px;
+	flex: 1;
+	z-index: 10;
+	box-shadow: 0px 0px 3px #000;
+}
+header a {color: var(--fulvous);}
+header a:hover {color: var(--battleshipGray) !important;}
+header img {height: 128px; filter: drop-shadow(2px 2px 1px #000);}
+#logo:hover {filter: drop-shadow(0px 1px 1px #fff);}
+	.mobile {display: none;}
+
+footer {
+	background-color: var(--darkPurple); 
+	color: var(--bone);
+	display: grid;
+	justify-content: space-around;
+	grid-auto-flow: row;
+	align-items: center;
+	grid-template-columns: repeat(2, auto);
+	height: fit-content;
+}
+	#support-link {color: var(--earthYellow); padding: 5px 0px;}
+	#support-link:hover {text-decoration: underline 2px;}
+
+
+/*\MOBILE STYLES\*/
+@media screen and (max-width: 479px) {
+	header {grid-auto-flow: row; row-gap: 15px;}
+		.desktop {display: none;}
+		.mobile {display: grid;}
+		#logo {justify-self: center;}
+	nav {justify-content: space-around;}
+
+	.to-top {bottom: 10%;}
+	footer {grid-template-columns: unset;}
+}
+
+
+/*\TABLET STYLES\*/
+@media screen and (min-width: 480px) and (max-width: 767px) {
+	header {
+		grid-template-columns: repeat(auto-fit, 350px);
+		grid-auto-flow: row;
+		justify-content: space-evenly;
+	}
+	nav {justify-content: space-around;}
+	
+	.to-top {bottom: 5%;}
+}
