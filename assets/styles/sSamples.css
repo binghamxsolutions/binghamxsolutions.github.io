@@ -36,7 +36,10 @@ h3 {align-content: center;}
 
 
 /*\GENERAL STYLES\*/
-body {background-color: var(--bone);}
+body {
+	background-color: var(--bone); 
+	grid-template-rows: max-content auto auto max-content;
+}
 article {outline: var(--darkPurple) 1px solid;}
 
 #type {
@@ -48,14 +51,15 @@ article {outline: var(--darkPurple) 1px solid;}
 	background-color: var(--ebony);
 } 
 .choice {border: 1.5px #a7a7a7 outset;}
+	.choice:hover {background-color: var(--wenge);}
 .choice button {
 	border: none;
 	border-radius: 2px;
 	background-color: transparent;
-	color: #fff;
+	color: var(--bone);
 }
-.choice button:hover {background-color: var(--wenge); color: #fff;}
-.choice .active {background-color: var(--ashGray); color: var(--darkPurple); font-weight: bold;}
+.choice button:hover {cursor:pointer; color: var(--darkPurple);}
+.choice .active {text-decoration: underline; font-weight: bold; color: #fff;}
 
 .options.mobile {display: none;}
 .options h3 {
@@ -87,18 +91,9 @@ h3 {text-align: center;}
 }
 
 
-/*\MOBILE STYLES\*/
-@media screen and (max-width: 479px) {
+/*\MOBILE & TABLET STYLES\*/
+@media screen and (max-width: 767px) {
 	#design, #development {grid-template-rows: max-content auto; grid-template-columns: initial; row-gap: 10px;}
 	.options.desktop {display: none;}
 	.options.mobile {display: block;}
-}
-
-
-/*\TABLET STYLES\*/
-@media screen and (min-width: 480px) and (max-width: 767px) {
-	#design, #development {grid-template-rows: max-content auto; grid-template-columns: initial; row-gap: 10px;}
-		.options.desktop {display: none;}
-	.options.mobile {display: block;}
-
 }

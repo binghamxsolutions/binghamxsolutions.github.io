@@ -1,24 +1,9 @@
-let	isMobileWidth = window.matchMedia("(max-width: 479px)");
 let	isTabletWidth = window.matchMedia("(max-width: 767px)");
+let devOption = null;
+let designOption = null;
+let isDev = false;
+let isDesign = false;
 
-
-function showDev(x, obj) {
-	option = document.getElementById("page");
-	option_list = document.getElementById("development").querySelectorAll("button");
-	option_list_length = document.getElementById("development").querySelectorAll("button").length;
-	option.removeAttribute("srcdoc");
-	src = "samples/development/" + x + ".html";
-	option.setAttribute('src', src);
-	option.setAttribute('title', obj.innerHTML);
-	
-	for (i = 0; i < option_list_length; i++) {
-		option_list[i].classList.remove("selected");
-	}
-	obj.classList.add("selected");
-	parent_elmt = obj.parentElement;
-	button_list = parent_elmt.querySelectorAll("button");
-	setButton(button_list, "current_dev_pos");
-}
 function showSamples(obj) {
 	scrub = document.getElementsByClassName("active")[0];
 	display_name = obj.innerHTML.toLowerCase();
@@ -30,67 +15,119 @@ function showSamples(obj) {
 	
 	for (i = 0; i < articles.length; i++) {
 		articles[i].style.display = "none";
-	}
-	
+	}	
 	
 	show.style.display = "grid";		
-/* 	if (isMobileWidth.matches || isTabletWidth.matches) {
-	} else {
-		show.style.display = "flex";
-	}*/
 } 
-function showDesign(x, obj) {
-	option = document.getElementById("media");
-	option.removeAttribute("srcdoc");
-	option_list = document.getElementById("design").querySelectorAll("button");
-	option_list_length = document.getElementById("design").querySelectorAll("button").length;
 
-	src = "samples/designs/" + x + ".html";
+function showDev(x, obj) {
+	isDev = true;
+	isDesign = false;
+	option = document.getElementById("page");
+	option.removeAttribute("srcdoc");
+	src = "samples/development/" + x + ".html";
 	option.setAttribute('src', src);
 	option.setAttribute('title', obj.innerHTML);
-	
-	for (i = 0; i < option_list_length; i++) {
-		option_list[i].classList.remove("selected");
-	}
-	obj.classList.add("selected");
-	parent_elmt = obj.parentElement;
-	button_list = parent_elmt.querySelectorAll("button");
-	setButton(button_list, "current_design_pos");
-}
-function setButton(button_list, sessionName) {
-	button_position = 0;
-	
-	for (i = 0; i < button_list.length; i++) {
-		if (button_list[i].classList.contains("selected")) {
-			button_position = i;
+		
+	if (isTabletWidth.matches) {
+		devOption = obj - 1;
+	} else {
+		parent_elmt = obj.parentElement;
+		button_list = parent_elmt.querySelectorAll("button");
+		option_list = document.getElementById("development").querySelectorAll("button");
+		option_list_length = document.getElementById("development").querySelectorAll("button").length;
+		
+		for (i = 0; i < option_list_length; i++) {
+			option_list[i].classList.remove("selected");
+			
+			if (option_list[i] == obj) {
+				devOption = i;
+			}
 		}
+		obj.classList.add("selected");
 	}
-	
-	sessionStorage.setItem(sessionName, button_position);
 }
+
+function showDesign(x, obj) {
+	isDev = false;
+	isDesign = true;
+	option = document.getElementById("media");
+	option.removeAttribute("srcdoc");
+	src = "samples/designs/" + x + ".html";
+	
+	option.setAttribute('src', src);
+	option.setAttribute('title', obj.innerHTML);
+
+	if (isTabletWidth.matches) {
+		designOption = obj - 1;
+	} else {
+		option_list = document.getElementById("design").querySelectorAll("button");
+		option_list_length = document.getElementById("design").querySelectorAll("button").length;
+		parent_elmt = obj.parentElement;
+		button_list = parent_elmt.querySelectorAll("button");
+		
+		for (i = 0; i < option_list_length; i++) {
+			option_list[i].classList.remove("selected");
+			
+			if (option_list[i] == obj) {
+				designOption = i;
+			}
+		}
+		obj.classList.add("selected");
+	}
+}
+
+window.onresize = function()  {
+	if (isTabletWidth.matches == false) {
+		if (isDesign == true) {
+			option_list = document.getElementById("design").querySelectorAll("button");
+			option_list_length = document.getElementById("design").querySelectorAll("button").length;
+			
+			for (i = 0; i < option_list_length; i++) {
+				option_list[i].classList.remove("selected");
+			}
+			option_list[designOption].classList.add("selected");
+			
+		} else if (isDev == true) {
+			option_list = document.getElementById("development").querySelectorAll("button");
+			option_list_length = document.getElementById("development").querySelectorAll("button").length;
+			
+			for (i = 0; i < option_list_length; i++) {
+				option_list[i].classList.remove("selected");
+			}
+			option_list[devOption].classList.add("selected");
+		}
+	} else {
+		if (isDesign == true) {
+			option_list = document.getElementById("design").querySelectorAll("select");
+			option_list[0].selectedIndex = designOption + 1;			
+		} else if (isDev == true) {
+			option_list = document.getElementById("development").querySelectorAll("select");
+			option_list[0].selectedIndex = devOption + 1;
+		}
+		
+	}
+};
+
 
 window.onload = function() {
-	type_switch = document.getElementsByClassName("choice");
-	option_list = document.getElementsByClassName("options");
-	dev_session = (sessionStorage.getItem("current_dev_pos"));
-	design_session = (sessionStorage.getItem("current_design_pos"));// == null);
-	frame_data = document.getElementById("page");
-
-	if (frame_data.getAttribute("srcdoc") != null) {
-		if ((frame_data.hasAttribute("srcdoc") == true)) {
-			sessionStorage.removeItem("current_dev_pos");
-			sessionStorage.removeItem("current_design_pos");		
-		}
-	}
-
-	if (dev_session == false && (type_switch[1].style.display != "none")) {
-		dev_button = sessionStorage.getItem("current_dev_pos");
-		console.log(dev_button);
-		dev_button_list = option_list[0].querySelectorAll("button");
-		dev_button_list[dev_button].classList.add("selected");
-	} else if (design_session == false && (type_switch[0].style.display != "none")) {
-		design_button = sessionStorage.getItem("current_design_pos");
-		design_button_list = option_list[1].querySelectorAll("button");
-		design_button_list[design_button].classList.add("selected");
-	}
+	dev_frame = document.getElementById("page");
+	design_frame = document.getElementById("media");
+	dev_frame.outerHTML = "<iframe id='page' "+ 
+		"srcdoc=\"<article style='text-align:center;'><h1 style='text-align:center;'>Need a few ideas?</h1>" +
+		"<p>Choose an option to see page layout examples</p></article>\">" +
+		"<p>NOTICE: Your browser does not support iframes</p></iframe>";
+		
+	design_frame.outerHTML = "<iframe id='media' "+ 
+				"srcdoc=\"<article style='text-align:center;'><h1 style='text-align:center;'>Need a few ideas?</h1>" +
+				"<p>Choose an option to see design examples</p></article>\">" +
+				"<p>NOTICE: Your browser does not support iframes</p></iframe>";
+	//resets iframe values to default on reload
+	
+	
+	dev_select = document.getElementById("development").querySelectorAll("select");
+	dev_select[0].selectedIndex = 0;
+	design_select = document.getElementById("design").querySelectorAll("select");
+	design_select[0].selectedIndex = 0;
+	//sets select elements to default values on reload	
 };

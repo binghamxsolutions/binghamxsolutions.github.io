@@ -6,7 +6,7 @@
 		<link href="assets\styles\sSamples.css" rel="stylesheet" type="text/css">
 		<link href="assets\icons\favicon.ico" rel="icon" type="image/x-icon">
 		<script src="assets/scripts/xPageSelect.js" defer></script>
-		<title>Bingham x Solutions | Samples</title>
+		<title>bingham x solutions | Samples</title>
 	</head>
 
 	<body>
@@ -46,24 +46,23 @@
 				<button onclick="showDev('service', this)">Service</button>
 			</section>
 
-			<select class="options mobile">
-				<option selected disabled>Choose a Page Type</option>
-				<option onclick="showDev('about', this)">About</option>
-				<option onclick="showDev('coming_soon', this)">Coming Soon</option>
-				<option onclick="showDev('contact', this)">Contact</option>
-				<option onclick="showDev('404', this)">Custom 404</option>
-				<option onclick="showDev('product', this)">Product</option>
-				<option onclick="showDev('registration', this)">Registration</option>
-				<option onclick="showDev('search', this)">Search</option>
-				<option onclick="showDev('service', this)">Service</option>
+			<select oninput="showDev(this.value, this.selectedIndex)" class="options mobile">
+				<option value="" selected disabled>Choose a Page Type</option>
+				<option value="about">About</option>
+				<option value="coming_soon">Coming Soon</option>
+				<option value="contact">Contact</option>
+				<option value="404">Custom 404</option>
+				<option value="product">Product</option>
+				<option value="registration">Registration</option>
+				<option value="search">Search</option>
+				<option value="service">Service</option>
 			</select>
 
 			
 			<section class="result">
 				<iframe id="page" 
 						srcdoc="<article style='text-align:center;'><h1 style='text-align:center;'>Need a few ideas?</h1>
-								<p>Choose an option to see page layout examples</p><p>NOTE: Mobile users may need to rotate phone 
-								to landscape mode in order to see sample selections.</p></article>">
+								<p>Choose an option to see page layout examples</p></article>">
 					<p>NOTICE: Your browser does not support iframes</p>
 				</iframe>
 			</section>
@@ -79,19 +78,18 @@
 			</section>
 			
 			
-			<select class="options mobile">
-				<option selected disabled>Choose a Design Type</option>
-				<option onclick="showDesign('pied_piper', this)">Business Card</option>
-				<option onclick="showDesign('block_bbq', this)">Flyer</option>
-				<option onclick="showDesign('greener_grass', this)">Logo</option>
-				<option onclick="showDesign('the_dog_haus', this)">Web</option>
+			<select oninput="showDesign(this.value, this.selectedIndex)" class="options mobile">
+				<option value="" selected disabled>Choose a Design Type</option>
+				<option value="pied_piper">Business Card</option>
+				<option value="block_bbq">Flyer</option>
+				<option value="greener_grass">Logo</option>
+				<option value="the_dog_haus">Web</option>
 			</select>
 			
 			<section class="result">
 				<iframe id="media" 
 						srcdoc="<article style='text-align:center;'><h1 style='text-align:center;'>Need a few ideas?</h1>
-								<p>Choose an option to see design examples</p><p>NOTE: Mobile users may need to rotate phone 
-								to landscape mode in order to see sample selections.</p></article>">
+								<p>Choose an option to see design examples</p></article>">
 					<p>NOTICE: Your browser does not support iframes</p>
 				</iframe>
 			</section>
