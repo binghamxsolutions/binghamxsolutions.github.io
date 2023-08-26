@@ -8,16 +8,8 @@ body {background: #fff url(../media/storyboard.jpg) 100% 100% / cover no-repeat 
 /*DISPLAY*/
 section, .note, .note span, .tip, .tip span {display: grid;}
 
-/*FLEX STYLES*/
-
-
 /*GRID STYLES*/
 .note, .tip {grid-auto-flow: column;}
-
-
-/*Color*/
-/*?text*/
-/*?background*/
 
 
 /*Alignment*/
@@ -34,8 +26,6 @@ section, .note, .note span, .tip, .tip span {display: grid;}
 
 /*\GENERAL STYLES\*/
 article {
-	/*padding: 10% 15%;
-	backdrop-filter: blur(5px);*/
 	justify-content: center;
 	justify-self: center;
 	width: 70%;
@@ -65,9 +55,17 @@ article img {filter: drop-shadow(0px 0px 5px var(--fulvous));}
 .tip {border: 3px solid var(--bone);}
 .tip span {background-color: var(--bone); color: #000;}
 
+/*\SMALL MOBILE DEVICE STYLES\*/
+@media screen and (min-width: 240px) and (max-width: 359px) {
+	article img {width: 70vw;}
+		h1 {font-size: 43px;}
+	.tip, .note {width: 70vw; grid-auto-flow: row; justify-self: center; text-align: center;}
+		.note span, .tip span {padding: 10px 0px;}
+	section {justify-items: center;}
+}
 
 /*\MOBILE STYLES\*/
-@media screen and (max-width: 479px) {
+@media screen (min-width: 360px) and (max-width: 479px) {
 	.tip, .note {width: 100%;}
 }
 

@@ -5,15 +5,24 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="assets\styles\sSamples.css" rel="stylesheet" type="text/css">
 		<link href="assets\icons\favicon.ico" rel="icon" type="image/x-icon">
+		<script src="assets/scripts/xScroll.js" defer></script>
 		<script src="assets/scripts/xPageSelect.js" defer></script>
 		<title>bingham x solutions | Samples</title>
 	</head>
 
 	<body>
+		<div class="unsupported">
+			<img src="assets\media\monogram_logotype.png" alt="bingham x solutions logo">
+			<h1>Sorry!</h1>
+			<p>Your device's screen size is unsupported. Please change your resolution by rotating your screen or use larger device.</p>	
+			<p>Thank you!</p>
+		</div>
+	
 		<header>
 			<a id="logo" href="index.html">
 				<img class="desktop" src="assets\media\bxs_logo.png" alt="Bingham x Solutions logo">
 				<img class="mobile" src="assets\media\logotype_combo.png" alt="Bingham x Solutions logo">
+				<img class="small-device" src="assets\media\monogram_logotype.png" alt="Bingham x Solutions logo">
 			</a>			
 
 			<nav>
@@ -21,6 +30,21 @@
 				<a href="pricing.html">Pricing</a>
 				<a href="" class="focus">Samples</a>
 				<a href="help.html">Help</a>
+			</nav>
+
+			<button class="small-device" id="small-menu-btn" onclick="openSubMenu()">
+				<figure>
+					<img src="assets\icons\iMenu_hamburger_white.png" alt="Menu button">
+					<figcaption>Menu</figcaption>	
+				</figure>
+			</button>
+		
+			<nav class="small-device">
+				<a href="index.html">Home</a>
+				<a href="pricing.html">Pricing</a>
+				<a href="" class="focus">Samples</a>
+				<a href="help.html">Help</a>
+				<button onclick="closeSubMenu()">CLOSE</button>
 			</nav>
 		</header>
 		
@@ -96,7 +120,7 @@
 		</article>
 
 		<footer>
-			<p>&copy; 2022 Bingham x Solutions <br> <i>Adding a personal touch to your digital solution</i></p>
+			<p>&copy; 2023 bingham x solutions <br> <i>Adding a personal touch to your digital solution</i></p>
 			<a id="support-link" target="_blank" href="https://ko-fi.com/binghamxsolutions">Support me on Ko-fi!</a>
 		</footer>
 	</body>

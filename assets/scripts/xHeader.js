@@ -18,12 +18,4 @@ function colorHeader() {
 	}
 }
 
-function openContactOptions() {
-	contactOptionMenu = document.getElementById("contact");
-	contactOptionMenu.style.display = "grid";
-}
-function closeContactOptions() {
-	contactOptionMenu = document.getElementById("contact");
-	contactOptionMenu.style.display = "none";
-}
 window.onscroll = function(){colorHeader();}

@@ -11,10 +11,18 @@
 	</head>
 
 	<body>
+		<div class="unsupported">
+			<img src="assets\media\monogram_logotype.png" alt="bingham x solutions logo">
+			<h1>Sorry!</h1>
+			<p>Your device's screen size is unsupported. Please change your resolution by rotating your screen or use larger device.</p>	
+			<p>Thank you!</p>
+		</div>
+
 		<header>
 			<a id="logo" href="index.html">
 				<img class="desktop" src="assets\media\bxs_logo.png" alt="Bingham x Solutions logo">
 				<img class="mobile" src="assets\media\logotype_combo.png" alt="Bingham x Solutions logo">
+				<img class="small-device" src="assets\media\monogram_logotype.png" alt="Bingham x Solutions logo">
 			</a>			
 			
 			<nav>
@@ -23,9 +31,24 @@
 				<a href="samples.html">Samples</a>
 				<a href="help.html">Help</a>
 			</nav>
+
+			<button class="small-device" id="small-menu-btn" onclick="openSubMenu()">
+				<figure>
+					<img src="assets\icons\iMenu_hamburger_white.png" alt="Menu button">
+					<figcaption>Menu</figcaption>	
+				</figure>
+			</button>
+		
+			<nav class="small-device">
+				<a href="index.html">Home</a>
+				<a href="" class="focus">Pricing</a>
+				<a href="samples.html">Samples</a>
+				<a href="help.html">Help</a>
+				<button onclick="closeSubMenu()">CLOSE</button>
+			</nav>
 		</header>
 		
-		<h1>Check out the price tiers below</h1>
+		<h1>Pricing</h1>
 		
 		<div class="switch">
 			<div id="container">
@@ -256,10 +279,10 @@
 
 		</article>
 
-			<a class="to-top" href="#">TOP</a>
+		<a class="to-top small-device" href='#'><img src="assets\icons\iArrow_up_filled_black.png" alt="Up Arrow"></a>	
 		
 		<footer>
-			<p>&copy; 2022 Bingham x Solutions <br> <i>Adding a personal touch to your digital solution</i></p>
+			<p>&copy; 2023 bingham x solutions <br> <i>Adding a personal touch to your digital solution</i></p>
 			<a id="support-link" target="_blank" href="https://ko-fi.com/binghamxsolutions">Support me on Ko-fi!</a>
 		</footer>
 	</body>

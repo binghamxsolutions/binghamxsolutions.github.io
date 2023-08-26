@@ -148,8 +148,22 @@ th {
 
 article table {border: 1px solid black;}
 
+
+/*\SMALL MOBILE DEVICE STYLES\*/
+@media screen and (min-width: 240px) and (max-width: 359px) {
+	body {row-gap: 15px;}
+	.switch {
+		margin: 0px;
+		height: 10vh;
+		width: 90vw;
+		justify-self: center;
+	}
+		#toggle {margin: 0px 15px;}
+	.pricing {width: 80vw;}
+}
+
 /*\MOBILE STYLES\*/
-@media screen and (max-width: 479px) {}
+@media screen (min-width: 360px) and (max-width: 479px) {}
 
 
 /*\TABLET STYLES\*/

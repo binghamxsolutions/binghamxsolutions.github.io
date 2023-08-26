@@ -22,7 +22,7 @@
 /*logotype*/
 @font-face {
 	font-family: Elite;
-	src: url(..//fonts//Special_Elite//xxx.ttf);
+	src: url(fonts//Special_Elite//SpecialElite-Regular.ttf);
 }
 
 /*headings*/
@@ -101,8 +101,8 @@ body {font: normal 16px / 1em Gentium, serif;}
 html, body {min-height: 100vh;}
 
 /*DISPLAY*/
-body {display: grid;}
-header, header nav, article {display: grid;}
+body, header, header nav, article {display: grid;}
+.small-device, .mobile {display: none;}
 
 /*GRID STYLES*/
 header nav {align-content: center;}
@@ -112,16 +112,9 @@ header, header nav {grid-auto-flow: column;}
 body {grid-template-rows: max-content auto max-content;}
 header, header nav {align-items: center;}
 
-/*Color*/
-/*?text*/
-/*?background*/
-
 
 /*Alignment*/
 h1, footer {text-align: center;}
-/*?content*/
-/*?position*/
-
 body, footer {margin: 0px;}
 
 
@@ -146,6 +139,8 @@ html {scroll-behavior: smooth;}
 .to-top:hover {
 	background-color: var(--silver);
 }
+	.to-top img {height: 5vh;}
+
 .focus {
 	font-weight: bold;
 	text-decoration: 2px underline;
@@ -157,15 +152,14 @@ header {
 	position: sticky;
 	top: 0px;	
 	padding: 15px;
-	flex: 1;
 	z-index: 10;
 	box-shadow: 0px 0px 3px #000;
 }
-header a {color: var(--fulvous);}
-header a:hover {color: var(--battleshipGray) !important;}
-header img {height: 128px; filter: drop-shadow(2px 2px 1px #000);}
-#logo:hover {filter: drop-shadow(0px 1px 1px #fff);}
-	.mobile {display: none;}
+	header a {color: var(--fulvous);}
+		header a:hover {color: var(--battleshipGray) !important;}
+	header img {height: 20vh; filter: drop-shadow(2px 2px 1px #000);}
+	#logo:hover {filter: drop-shadow(0px 1px 1px #fff);}
+		.mobile {display: none;}
 
 footer {
 	background-color: var(--darkPurple); 
@@ -180,11 +174,83 @@ footer {
 	#support-link {color: var(--earthYellow); padding: 5px 0px;}
 	#support-link:hover {text-decoration: underline 2px;}
 
+.unsupported {display: none;}
+
+/*UNSUPPORTED DEVICES*/
+@media screen and (max-width: 239px) {
+	body {overflow: hidden;}
+	.unsupported {
+		display: grid; 
+		position: sticky; 
+		top: 0;
+		background-color: #0007; 
+		backdrop-filter: blur(100px);
+		justify-content: center;
+		justify-items: center;
+		align-content: center;
+		z-index: 30;
+		height: 100vh;
+		width: 100vw;
+	}
+		.unsupported img {width: 50vw;}
+		.unsupported p {color: var(--bone); text-align: center; font-size: 7vw;}
+		.unsupported h1 {font-size: 15vw;}
+}
+
+/*\SMALL MOBILE DEVICE STYLES\*/
+@media screen and (min-width: 240px) and (max-width: 359px) {
+	.desktop, .mobile {display: none;}
+	.small-device {display: grid;}
+	
+	header {justify-content: space-between; align-content: center; padding: 5px;}
+		header nav {
+			visibility: hidden;
+			background-color: var(--darkPurple);
+			grid-auto-flow: row;
+			align-items: initial;
+			align-content: space-evenly;
+			position: absolute;
+			top: 0px;
+			height: 100vh;
+			width: 100vw;
+			text-align: center;
+			opacity: 0;
+			transition: opacity 0.5s;
+		}
+			header nav button {
+				background-color: transparent;
+				border-color: transparent;
+				color: var(--bone);
+				font: bold 1em / 1.15em Elite, monospace;
+				
+			}
+		header img, #small-menu-btn {height: 25vh;}
+		#small-menu-btn {
+			background-color: transparent;
+			border-color: transparent;
+			color: #ddd;
+			justify-self: center;
+			height: fit-content;
+			padding: 0px;
+		}
+			#small-menu-btn:hover {color: var(--fulvous);}
+			#small-menu-btn:hover img{filter: drop-shadow(2px 2px 1px var(--fulvous));}
+			#small-menu-btn figure {
+				margin: 0;
+				display: grid;
+				justify-items: center;
+				align-items: center;
+				align-content: center;
+			}
+			#small-menu-btn img {height: 50%;}
+		
+	footer {grid-template-columns: initial;}
+}
 
 /*\MOBILE STYLES\*/
-@media screen and (max-width: 479px) {
+@media screen and (min-width: 360px) and (max-width: 479px) {
 	header {grid-auto-flow: row; row-gap: 15px;}
-		.desktop {display: none;}
+		.desktop, .small-device {display: none;}
 		.mobile {display: grid;}
 		#logo {justify-self: center;}
 	nav {justify-content: space-around;}
@@ -197,7 +263,7 @@ footer {
 /*\TABLET STYLES\*/
 @media screen and (min-width: 480px) and (max-width: 767px) {
 	header {
-		grid-template-columns: repeat(auto-fit, 350px);
+		grid-template-columns: repeat(auto-fill, 50%);
 		grid-auto-flow: row;
 		justify-content: space-evenly;
 	}
