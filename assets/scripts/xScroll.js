@@ -5,7 +5,7 @@ function toTop() {
 	btn = document.getElementsByClassName("to-top");
 	otherBtnExists = false;
 	
-	if (btn.length > 1) { //checls to see if another button exists
+	if (btn.length > 1) { //checks to see if another button exists
 		otherBtn = true;
 	}
 	
@@ -59,4 +59,4 @@ window.onload = () => {
 	if (unsupportedMediaSize.matches) {
 		window.scrollTo({top: 0, left: 0, behavior: "instant"});
 	}
-}
+};

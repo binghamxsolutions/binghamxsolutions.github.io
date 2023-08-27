@@ -103,7 +103,49 @@ footer a:hover {
 	padding: 0px 10px;
 }
 
-@media screen and (max-width: 479px) {
+.unsupported {display: none;}
+
+/*UNSUPPORTED DEVICES*/
+@media screen and (max-width: 239px) {
+	body {overflow: hidden;}
+	.unsupported {
+		display: grid; 
+		position: sticky; 
+		top: 0;
+		background-color: #0007; 
+		backdrop-filter: blur(100px);
+		justify-content: center;
+		justify-items: center;
+		align-content: center;
+		z-index: 30;
+		min-height: 100vh;
+		min-width: 100vw;
+	}
+		.unsupported > * {filter: drop-shadow(-1px 1px 3px #bbb); color: #2f9f7f; text-align: center;}
+		.unsupported p {color: var(--bone); text-align: center; font-size: 7vw;}
+		.unsupported h1 {font-size: 15vw;}
+		.unsupported footer {-webkit-text-fill-color: transparent; -webkit-background-clip: text;}
+}
+
+/*\SMALL MOBILE DEVICE STYLES\*/
+@media screen and (min-width: 240px) and (max-width: 359px) {
+	header p {text-align: center;}
+	nav {display: grid; grid-auto-flow: column; font-size: 0.75em;}
+	article table {
+		width: 90%;
+	}
+		article tbody {display: grid; row-gap: 10px;}
+	footer {
+		grid-auto-flow: row;
+	}
+		footer table {margin: 5px;}
+	tr {display: grid; justify-content: center;}
+		footer td { text-align: center;}
+	#sign-in {grid-auto-flow: row; justify-items: center;}
+}
+
+
+@media screen and (nin-width: 360px) and (max-width: 479px) {
 	article table {
 		width: 90%;
 	}

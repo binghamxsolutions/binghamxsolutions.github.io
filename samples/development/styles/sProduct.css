@@ -138,7 +138,56 @@ footer p {
 	filter: sepia(50%);
 }
 
-@media screen and (max-width: 479px) {
+.unsupported {display: none;}
+
+
+
+/*UNSUPPORTED DEVICES*/
+@media screen and (max-width: 239px) {
+	body {overflow: hidden;}
+	.unsupported {
+		display: grid; 
+		position: sticky; 
+		top: 0;
+		background-color: #0007; 
+		backdrop-filter: blur(100px);
+		justify-content: center;
+		justify-items: center;
+		align-content: center;
+		z-index: 30;
+		min-height: 100vh;
+		min-width: 100vw;
+	}
+		.unsupported img {height: 20vh;}
+		.unsupported p {color: var(--bone); text-align: center; font-size: 7vw;}
+		.unsupported h1 {font-size: 15vw;}
+}
+
+/*\SMALL MOBILE DEVICE STYLES\*/
+@media screen and (min-width: 240px) and (max-width: 359px) {
+	header nav {display: flex; flex-wrap: wrap-reverse;}
+	header nav a {
+		flex: 10%;
+		text-align: center;
+	}
+		header nav a:hover {font-size: initial;}
+		#logo {
+			margin: auto;
+			display: block;
+			float: unset;
+		}
+	#product-display {display: grid; row-gap: 15px; justify-items: center;}
+		#p-img, #other-items img {height: 50vh; width: 70vw;}
+			#p-img img {width: 100%; height: 100%;}
+		#product-imgs {width: 70vw; display: grid; grid-auto-flow: column; height: fit-content;}
+			#product-imgs img {border: none;}
+	#product-panel tr {display: grid; grid-auto-flow: column; justify-items: center; font-size: 4vw;}
+	
+	footer {display: grid; grid-auto-flow: row; grid-template-columns: repeat(auto-fit, 50%);}
+		#company {text-align: center; grid-column-start: 1; grid-column-end: 3;}
+}
+
+@media screen and (min-width: 360px) and (max-width: 479px) {
 	header nav, footer, #product-imgs {display: flex;}
 	footer, #product-details, #product-display, #product-imgs {flex-wrap: wrap;}
 	#product-details, #product-display {flex-direction: row;}

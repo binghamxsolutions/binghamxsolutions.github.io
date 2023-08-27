@@ -1,10 +1,19 @@
+let smallScreenSize = window.matchMedia("(min-width: 240px) and (max-width: 359px)");
+
 function sizeHeader() {
 	img = document.getElementById("logo");
-	
-	if ((document.body.scrollTop > 0) || (document.documentElement.scrollTop > 0)) {
-		img.style.height = "50px";
+	if(smallScreenSize.matches) {
+		if ((document.body.scrollTop > 0) || (document.documentElement.scrollTop > 0)) {
+			img.style.height = "0vh";
+		} else {
+			img.style.height = "20vh";
+		}				
 	} else {
-		img.style.height = "150px";
+		if ((document.body.scrollTop > 0) || (document.documentElement.scrollTop > 0)) {
+			img.style.height = "50px";
+		} else {
+			img.style.height = "150px";
+		}		
 	}
 }
 function showBtn() {

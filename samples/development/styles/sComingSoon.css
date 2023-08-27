@@ -127,7 +127,40 @@ button:hover {
 	background-color: #a0adf2;
 }
 
-@media screen and (max-width: 479px) {
+.unsupported {display: none;}
+
+/*UNSUPPORTED DEVICES*/
+@media screen and (max-width: 239px) {
+	body {overflow: hidden;}
+	.unsupported {
+		display: grid; 
+		position: sticky; 
+		top: 0;
+		background-color: #aa77; 
+		backdrop-filter: blur(100px);
+		justify-content: center;
+		justify-items: center;
+		align-content: center;
+		z-index: 30;
+		height: 100vh;
+		width: 100vw;
+	}
+		.unsupported img {width: 50vw;}
+		.unsupported p {color: var(--bone); text-align: center; font-size: 7vw;}
+		.unsupported h1 {font-size: 15vw;}	
+}
+
+/*\SMALL MOBILE DEVICE STYLES\*/
+@media screen and (min-width: 240px) and (max-width: 359px) {
+	header {grid-auto-flow: row; justify-items: center;}
+	article {text-align: center; display: grid; padding: 5px;}
+		form, form div {grid-auto-flow: row;}
+		form {row-gap: 15px; margin: 15px 0px;}
+			form div {row-gap: 5px;}
+	footer {text-align: center;}
+}
+
+@media screen and (min-width: 360px) and (max-width: 479px) {
 	header {
 		background-color: #0007;
 	}
@@ -142,7 +175,6 @@ button:hover {
 		body {text-align: center;}
 	form {grid-auto-flow: row; row-gap: 10px;}
 		form div {grid-auto-flow: row; row-gap: 10px; }
-
 }
 
 @media screen and (min-width: 480px) and (max-width: 767px) {

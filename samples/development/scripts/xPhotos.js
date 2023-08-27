@@ -8,4 +8,5 @@ function changePhoto(x) {
 function resetPhotos() {
 	document.getElementById("product-imgs").scrollTop = 0;
 }
-window.onload = function() {changePhoto(0); resetPhotos();}
+
+window.onload = () => {changePhoto(0); resetPhotos();};

@@ -4,11 +4,19 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="styles\sContact.css" type="text/css">
+		<script src="scripts\xSmallScreens.js" defer></script>
 		<script src="scripts\xSubmenu.js"></script>
 		<title>Contact</title>
 	</head>
 
 	<body>
+		<div class="unsupported">
+			<h1>Sorry!</h1>
+			<p>Your device's screen size is unsupported. Please change your resolution by rotating your screen or use larger device.</p>	
+			<p>Thank you!</p>
+			<footer>&copy;2022 Jayce Doe</footer>
+		</div>
+
 		<header>
 			<section class="navigation items">
 				<button type="button" class="menu" id="close" onclick="closeMenu()">CLOSE</button>
@@ -56,15 +64,32 @@
 					<form>
 						<div id="form-content">
 							<div id="labels">
-								<label for="">Full Name: </label>
-								<label for="">E-mail: </label>
-								<label for="">Message: </label>
+								<label for="name">Full Name: </label>
+								<label for="email">E-mail: </label>
+								<label for="msg">Message: </label>
 							</div>
 
 							<div id="fields">
-								<input type="text">
-								<input type="text">
-								<textarea></textarea>
+								<input id="name" type="text">
+								<input id="email" type="text">
+								<textarea id="msg"></textarea>
+							</div>
+						</div>
+
+						<div id="form-content-small-devices">
+							<div class="input name">
+								<label for="name">Full Name: </label>
+								<input id="name" type="text">
+							</div>
+
+							<div class="input email">
+								<label for="email">E-mail: </label>
+								<input id="email" type="text">							
+							</div>
+							
+							<div class="input msg">
+								<label for="msg">Message: </label>
+								<textarea id="msg"></textarea>
 							</div>
 						</div>
 

@@ -8,10 +8,10 @@
 	font-family: Label;
 	src: url(fonts\\Gruppo\\Gruppo-Regular.ttf);
 }
-
+* {margin: 0;} /*to resolve unknown margin spacing isssue*/
 html, body {min-height:100vh;}
 body, header, article, #menu, #info, #profile, #profile figure, #message form, #form-content, .navigation, .navigation nav, #message, #labels, #social, #fields, footer {display: grid;}
-article, aside {padding: 0% 2%;}
+article {padding: 0% 2%;}
 
 .navigation, #profile, #profile figure {justify-items: center;}
 article, #info, #profile figure {align-items: center;}
@@ -144,11 +144,63 @@ footer {
 	align-content: center
 }
 
-@media screen and (max-width: 479px) {
+#form-content-small-devices, .unsupported {display: none;}
+
+
+/*UNSUPPORTED DEVICES*/
+@media screen and (max-width: 239px) {
+	body {overflow: hidden;}
+	.unsupported {
+		display: grid; 
+		position: sticky; 
+		top: 0;
+		background-color: #0007; 
+		backdrop-filter: blur(100px);
+		justify-content: center;
+		justify-items: center;
+		align-content: center;
+		z-index: 30;
+		height: 100vh;
+		width: 100vw;
+		color: #ddd;
+		row-gap: 15px;
+	}
+		.unsupported img {width: 50vw;}
+		.unsupported p {color: var(--bone); text-align: center; font-size: 7vw;}
+		.unsupported h1 {font-size: 15vw;}	
+		.unsupported footer {font-size: 10vw;}
+}
+
+/*\SMALL MOBILE DEVICE STYLES\*/
+@media screen and (min-width: 240px) and (max-width: 359px) {
 	body, #info {grid-auto-flow: row; row-gap: 15px; column-gap: 0px;}
 	body {grid-template-columns: initial;}
-	header {perspective: none; transform-origin: top;
+	header {perspective: none; transform-origin: top;}
+		.navigation.items {
+			backdrop-filter: initial;
+			background-color: tomato;
+			width: 100vw;
+			height: 100vh;
+			transform: rotateX(90deg);
+			position: fixed;
+			transform-origin: top;
+		}
+		.navigation.menu {padding: 5px;}
+	article {row-gap: 15px;}
+	#profile {border-radius: 15px;}
+		#card {position: unset; bottom: 0px;}
+	#message, form {row-gap: 15px;}
+	#message {margin: 15px 0px;}
+		#form-content-small-devices {display: grid; row-gap: 10px;}
+			.input {display: grid;}
+		#form-content {display: none;}
 }
+
+
+@media screen and (min-width: 360px) and (max-width: 479px) {
+	body, #info {grid-auto-flow: row; row-gap: 15px; column-gap: 0px;}
+	body {grid-template-columns: initial;}
+	header {perspective: none; transform-origin: top;}
 		.navigation.items {
 			backdrop-filter: initial;
 			background-color: tomato;
@@ -160,8 +212,7 @@ footer {
 		}
 	
 	#profile {border-radius: 15px;}
-		#card {position: unset; bottom: 0px;}
-	
+		#card {position: unset; bottom: 0px;}	
 }
 @media screen and (min-width: 480px) and (max-width: 767px) {
 	.navigation {

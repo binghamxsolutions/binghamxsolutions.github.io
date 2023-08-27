@@ -81,6 +81,33 @@ footer {
 	padding: 0% 2%;
 }
 
+.unsupported {display: none;}
+
+
+/*UNSUPPORTED DEVICES*/
+@media screen and (max-width: 239px) {
+	body {overflow: hidden;}
+	.unsupported {
+		display: grid; 
+		position: sticky; 
+		top: 0;
+		background-color: #3337; 
+		backdrop-filter: blur(100px);
+		justify-content: center;
+		justify-items: center;
+		align-content: center;
+		z-index: 30;
+		height: 100vh;
+		width: 100vw;
+	}
+		.unsupported img {height: 20vh; border: none;}
+		.unsupported p {color: var(--bone); text-align: center; font-size: 7vw;}
+		.unsupported h1 {font-size: 15vw;}
+}
+
+/*\SMALL MOBILE DEVICE STYLES\*/
+@media screen and (min-width: 240px) and (max-width: 359px) {}
+
 @media screen and (min-width: 479px) and (max-width: 767px) {
 	article {text-align: center;}
 }

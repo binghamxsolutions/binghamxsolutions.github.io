@@ -48,13 +48,9 @@ h1 {
 }
 
 
-
-@media screen and (max-width: 479px) {
+/*\MOBILE STYLES\*/
+@media screen and (min-width: 360px) and (max-width: 479px) {
 	.content {
 		flex-direction: column;
 	}
-}
-
-@media screen and (min-width: 480px) and (max-width: 767px) {
-	
 }
