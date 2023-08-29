@@ -145,9 +145,9 @@ footer a:hover {
 }
 
 
-@media screen and (nin-width: 360px) and (max-width: 479px) {
+@media screen and (min-width: 360px) and (max-width: 479px) {
 	article table {
-		width: 90%;
+		width: fit-content;
 	}
 	footer {
 		grid-auto-flow: row;

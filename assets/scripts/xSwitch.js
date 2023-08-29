@@ -27,8 +27,11 @@ function valueOut(obj) {
 	}
 }
 
-window.onload = () => {
+function setFocusElements() {
 	for (i = 0; i < cards.length; i++) {
-		cards[i].setAttribute("tabindex", "0");
+		cards[i].setAttribute("tabindex", 0);
 	}
+	
 }
+
+window.onload = function() { setFocusElements(); console.log(cards.length);}
