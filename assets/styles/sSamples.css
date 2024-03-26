@@ -96,4 +96,5 @@ h3 {text-align: center;}
 	#design, #development {grid-template-rows: max-content auto; grid-template-columns: initial; row-gap: 10px;}
 	.options.desktop {display: none;}
 	.options.mobile {display: block;}
+	#page, #media {height: 80vh;}
 }
