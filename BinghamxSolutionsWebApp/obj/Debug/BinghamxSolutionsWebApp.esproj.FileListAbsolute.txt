@@ -1,0 +1,2 @@
+C:\Users\bingh\Desktop\binghamxsolutions.github.io\BinghamxSolutionsWebApp\obj\Debug\BinghamxSolutionsWebApp.esproj.SuggestedBindingRedirects.cache
+C:\Users\bingh\Desktop\binghamxsolutions.github.io\BinghamxSolutionsWebApp\obj\Debug\BinghamxSolutionsWebApp.esproj.CoreCompileInputs.cache

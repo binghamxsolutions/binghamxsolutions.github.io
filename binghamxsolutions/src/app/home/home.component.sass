@@ -1,0 +1,200 @@
+@charset "utf-8"
+@import "src/styles.sass"
+
+
+
+/*\SHARED STYLES\*/
+#steps table 
+	border-collapse: collapse
+	filter: drop-shadow(-3px 2px 4px #000)
+#steps th
+	border-radius: 5px 5px 0px 0px
+#steps td 
+	border-radius: 0px 0px 5px 5px
+
+/*DISPLAY*/
+section, #steps, #options, .more-info, #more 
+	display: grid
+
+
+/*GRID STYLES*/
+/*section row-gap: 20px*/
+#steps 
+	grid-auto-flow: column
+#options, #more 
+	grid-auto-flow: row
+#steps, #options, #sample-list 
+	column-gap: 20px
+.more-info 
+	grid-template-columns: 50% 50%
+#more 
+	row-gap: 20px
+section 
+	grid-template-columns: 70%
+	justify-content: center
+
+
+/*Alignment*/
+/*?content*/
+#info, #more 
+	justify-content: center
+#options, .more-info 
+	justify-items: center
+#cta 
+	justify-self: center
+/*?position*/
+
+
+
+/*\GENERAL STYLES\*/
+article 
+	background: grey url(../../media/wireframe.jpg) 100% 100% / cover fixed no-repeat 
+	backdrop-filter: blur(2px)
+
+header 
+	background-color: transparent
+	transition: 0.5s
+	box-shadow: none
+
+header a 
+	color: $fulvous
+	text-shadow: 2px 1px $darkPurple
+nav a 
+	text-shadow: -1px -1px 0.5px $darkPurple
+
+h1 
+	color: $silver
+	text-shadow: -3px -3px 2px $darkPurple
+
+
+section 
+	padding: 15px
+#info p 
+	filter: drop-shadow(1px 1px #000)
+	color: $earthYellow
+	text-shadow: -2px 1px 2px $darkPurple
+
+
+#next-steps 
+	background: grey url(../../media/concept_art.jpg) 100% 100% / cover fixed no-repeat 
+	color: $darkPurple
+	background-blend-mode: luminosity
+
+#next-steps p, #next-steps ol 
+	text-shadow: -1px 1px 1px $bone
+#next-steps a 
+	color: $darkPurple
+	text-decoration: 1px underline $fulvous
+#next-steps h2 
+	color: $bone
+	text-shadow: -1px 1px $wenge
+#next-steps #tips 
+	color: $bone
+
+#cta, #price, #example 
+	border: none
+	border-radius: 3px
+	background-color: $ebony
+	color: #fff
+	filter: drop-shadow(-1px 1px 3px $ashGray)
+	font-weight: bold
+
+#cta:hover, #price:hover, #example:hover 
+	background-color: $fulvous
+
+
+#steps table th 
+	background-color: #fff 
+	font-size: 24px 
+	line-height: 1.15em 
+	color: $darkPurple
+#steps td 
+	padding: 20px
+	background-color: $darkPurple
+	color: $bone
+
+
+.help 
+	background-color: $darkPurple
+	border: 1px solid #fff
+	border-radius: 5px
+	padding: 10px
+	font-weight: bold
+	text-align: center 
+	&:hover 
+		box-shadow: 1px 1px 3px #000
+		background-color: $silver
+		color: #000
+
+
+#next h2 
+	color: $ebony
+	text-shadow: -2px 1px 1px $ashGray
+
+#more 
+	padding: 20px 
+	align-content: center
+	&.help 
+		padding: 40px
+		font-size: 24px
+		&:hover 
+			//mix-blend-mode: multiply
+			border: inset 3px 2px $darkPurple
+			text-shadow: #fff 0px 0px , #000 1px 1px
+
+#price:hover 
+	//background: #000 url("../../media/housing_logo.png") 100% 100% / cover no-repeat 	
+
+#example:hover 
+	//background: #000 url("../../media/qfp_homepage.png") 100% 100% / cover no-repeat 
+
+
+
+/*\SMALL SCREEN STYLES\*/
+@media screen and (min-width: 240px) and (max-width: 359px) 
+	section 
+		padding: 0px
+		p 
+			padding: 0px
+		h2
+			text-align: center
+	.more-info 
+		justify-content: center
+
+	#steps, .more-info 
+		grid-auto-flow: row
+	#steps 
+		row-gap: 15px	
+	.more-info
+		grid-template-columns: unset 
+		row-gap: 35px
+
+
+
+/*\MOBILE STYLES\*/
+@media screen and (min-width: 360px) and (max-width: 479px) 
+	section h2
+		text-align: center
+	#steps
+		grid-auto-flow: row 
+		row-gap: 15px	
+	.more-info
+		grid-auto-flow: row
+		grid-template-columns: unset 
+		row-gap: 50px
+
+
+
+
+/*\TABLET STYLES\*/
+@media screen and (min-width: 480px) and (max-width: 767px) 
+	#steps, .more-info 
+		grid-auto-flow: row
+	#steps 
+		row-gap: 15px	
+	.more-info 
+		grid-template-columns: unset 
+		row-gap: 35px
+	#more 
+		grid-auto-flow: column 
+		column-gap: 30px

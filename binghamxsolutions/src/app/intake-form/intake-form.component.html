@@ -1,0 +1,87 @@
+<form>
+	<fieldset>
+		<legend>New Client Intake Form</legend>
+
+		<!-- Contact Information -->
+		<div class="row">
+			<label for="name">Full Name</label>
+			<input name="name" type="text">
+		</div>
+
+		<div class="row">
+			<label for="email">E-mail Address</label>
+			<input name="email" type="email">
+		</div>
+
+		<!-- Contact Reason -->
+		<div class="row">
+			<p>What is this consultation for?</p>
+			
+			<div class="column center">
+				<div>
+					<input name="reason" id="personal" type="radio" value="Personal Use">
+					<label for="personal">Personal Use</label>
+				</div>
+				
+				<div>
+					<input name="reason" id="business" type="radio" value="Business">
+					<label for="business">Business</label>
+				</div>					
+			</div>
+		</div>
+
+		<div class="row">
+			<label for="business-name">Business Name</label>
+			<input name="business-name" type="text">
+		</div>
+
+		<div class="row">
+			<p>What do you need designed?</p>
+			<div>
+				<input name="logo" type="checkbox" value="logo">
+				<label for="logo">Logo</label>				
+			</div>
+			
+			<div>
+				<input type="checkbox" value="business-card">
+				<label for="business-card">Business Card</label>
+			</div>
+			
+			<div>
+				<input name="flyer" type="checkbox" value="flyer">
+				<label for="flyer">Flyer</label>
+			</div>
+
+			<div>
+				<input name="website" type="checkbox" value="website">
+				<label for="website">Website</label>
+			</div>	
+		</div>
+
+		<!-- Additional Information -->
+		<div class="row">
+			<label for="notes">Is there any additional information you would like to share?</label>
+			<textarea name="notes" cols="10" rows="5" placeholder="Enter your additional notes here..."></textarea>
+		</div>
+		
+		<div class="row">
+			<p>What would be the best time to reach you?</p>
+			
+			<div class="column spaced">
+				<div class="column label">
+					<label for="date-picker">Date</label>
+					<input name="date-picker" type="date">
+				</div>
+				<div class="column label">
+					<label for="time-selector">Time</label>
+					<input name="time-selector" type="time">
+				</div>
+			</div>
+		</div>
+		
+		<div class="column spaced">
+			<input type="reset" value="Clear All">
+			<input type="submit" value="Submit">
+		</div>
+	</fieldset>
+</form>

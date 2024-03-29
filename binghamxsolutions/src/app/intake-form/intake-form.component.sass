@@ -1,0 +1,37 @@
+form 
+	.row
+		display: grid
+		grid-auto-flow: row
+	.column
+		display: grid
+		grid-auto-flow: column
+		&.center
+			justify-items: center
+		&.spaced
+			justify-content: space-evenly
+		&.label
+			column-gap: 5px
+
+fieldset 
+	background-color: #000b35
+	color: white
+	display: grid
+	justify-content: left
+	row-gap: 15px
+	padding: 10px
+	border-radius: 15px
+	box-shadow: 2px 3px 5px black
+	&.row 
+		display: grid
+		grid-auto-flow: row
+	&.column 
+		display: grid
+		grid-auto-flow: column
+p 
+	margin: 0
+	padding: 0
+legend
+	text-shadow: 1px 2px 5px red
+	font-weight: bold
+	font-size: 2em
+	margin: auto

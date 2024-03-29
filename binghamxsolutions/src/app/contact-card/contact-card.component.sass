@@ -1,0 +1,99 @@
+@import 'src/styles.sass'
+
+
+/**keyframe animations*/
+@keyframes float 
+	0% 
+		transform: translateY(0)
+		box-shadow: 0px 10px 10px #0007
+	50% 
+		transform: translateY(-15%)
+		box-shadow: 0px 20px 20px #0003
+	100% 
+		transform: translateY(0)
+		box-shadow: 0px 10px 10px #0007		
+	
+
+@keyframes floatMobile 
+	0% 
+		transform: translateY(0)
+		box-shadow: 0px 10px 10px #0007
+	50% 
+		transform: translateY(-5%)
+		box-shadow: 0px 20px 20px #0003
+	100%
+		transform: translateY(0)
+		box-shadow: 0px 10px 10px #0007
+
+.socials 
+	display: grid 
+	grid-auto-flow: column 
+	column-gap: 10px
+	img 
+		width: 30px 
+		transition: transform .5s, filter .5s
+		&:hover 
+			transform: translateY(-5px) scale(1.05)
+			filter: drop-shadow(0px 0px 2px $darkPurple)
+
+.contact-card 
+	display: grid
+	justify-items: center
+	background-color: $bone
+	border-radius: 10px
+	filter: drop-shadow(-10px -10px $wenge)
+	animation: float 5s linear infinite
+	padding: 30px
+	row-gap: 15px
+	figure 
+		margin: 0px
+	figcaption 
+		text-align: center 
+		font-weight: bold
+		margin: 5px
+	p 
+		font-style: italic 
+		margin: 0px 
+		text-align: center
+	#send-email 
+		border: none
+		padding: 15px
+		filter: drop-shadow(1px 1px 3px $fulvous)
+		border-radius: 2px
+		font-size: 1.5em
+		background-color: $darkPurple
+		color: $silver
+		&:hover 
+			cursor: pointer
+			outline: inset $fulvous
+		&:active 
+			background-color: $fulvous
+			color: $darkPurple
+	.profile-pic 
+		width: 150px
+		height: 150px
+		object-fit: cover
+		border-radius: 50%
+		border: double $ebony 5px
+
+/*\SMALL SCREEN STYLES\*/
+@media screen and (min-width: 240px) and (max-width: 359px) 
+	.contact-card 
+		width: 70vw 
+		padding: 10px 
+		animation: none
+		figure 
+			display: grid 
+			justify-items: center 
+			align-items: center
+
+/*MOBILE STYLES*/
+@media screen and (min-width: 360px) and (max-width: 479px) 
+	.contact-card 
+		animation: floatMobile 3s linear infinite
+
+/*\TABLET STYLES\*/
+@media screen and (min-width: 480px) and (max-width: 767px) 
+
+	.contact-card 
+		animation: floatMobile 3s linear infinite
