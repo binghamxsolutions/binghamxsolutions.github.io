@@ -1,86 +1,109 @@
-<form>
-	<fieldset>
-		<legend>New Client Intake Form</legend>
+<form [formGroup]="newIntakeForm" (ngSubmit)="sendNewIntake(); newIntakeForm.reset()">
+	<h2>New Client Intake Form</h2>
+	<progress value="{{progress}}" max="100"></progress>
 
+	<fieldset *ngIf="currentPos == 1">
 		<!-- Contact Information -->
+		<legend>Contact Information</legend>
 		<div class="row">
-			<label for="name">Full Name</label>
-			<input name="name" type="text">
+			<label for="name">Name</label>
+			<input name="name" type="text" formControlName="name">
 		</div>
 
 		<div class="row">
 			<label for="email">E-mail Address</label>
-			<input name="email" type="email">
+			<input name="email" type="email" formControlName="email">
 		</div>
 
+		<button (click)="setStage(1)" [disabled]="!newIntakeForm.valid">Next</button>
+	</fieldset>
+	
+	<fieldset *ngIf="currentPos == 2">
 		<!-- Contact Reason -->
+		<legend>Contact Reason</legend>
 		<div class="row">
 			<p>What is this consultation for?</p>
 			
 			<div class="column center">
-				<div>
-					<input name="reason" id="personal" type="radio" value="Personal Use">
-					<label for="personal">Personal Use</label>
-				</div>
-				
-				<div>
-					<input name="reason" id="business" type="radio" value="Business">
-					<label for="business">Business</label>
-				</div>					
+				<div *ngFor="let reason of reasons">
+					<input name="reason" id="{{reason.id}}" type="radio" value="{{reason.value}}" formControlName="reason">
+					<label for="personal">{{reason.label}}</label>
+				</div>				
 			</div>
 		</div>
 
-		<div class="row">
+		<div *ngIf="isBusiness()" class="row">
 			<label for="business-name">Business Name</label>
-			<input name="business-name" type="text">
+			<input name="business-name" type="text" formControlName="business_name">
 		</div>
 
 		<div class="row">
 			<p>What do you need designed?</p>
-			<div>
-				<input name="logo" type="checkbox" value="logo">
-				<label for="logo">Logo</label>				
-			</div>
 			
-			<div>
-				<input type="checkbox" value="business-card">
-				<label for="business-card">Business Card</label>
+			<div  formArrayName="services">
+				<div *ngFor="let service of services; let i = index">
+					<input name="{{service.value}}" type="checkbox" id="{{service.value}}" formControlName="{{i}}">
+					<label for="{{service.id}}">{{service.name}}</label>				
+				</div>
 			</div>
-			
-			<div>
-				<input name="flyer" type="checkbox" value="flyer">
-				<label for="flyer">Flyer</label>
-			</div>
-
-			<div>
-				<input name="website" type="checkbox" value="website">
-				<label for="website">Website</label>
-			</div>	
 		</div>
 
+		<div class="column spaced">
+			<button (click)="setStage(-1)">Previous</button>
+			<button (click)="setStage(1)">Next</button>
+		</div>
+	</fieldset>
+
+	<fieldset *ngIf="currentPos == 3">
 		<!-- Additional Information -->
+		<legend>Additional Information</legend>
 		<div class="row">
 			<label for="notes">Is there any additional information you would like to share?</label>
-			<textarea name="notes" cols="10" rows="5" placeholder="Enter your additional notes here..."></textarea>
+			<textarea name="notes" cols="10" rows="5" placeholder="Enter your additional notes here..." formControlName="notes"></textarea>
 		</div>
 		
 		<div class="row">
-			<p>What would be the best time to reach you?</p>
+			<p>Please provide a best timeframe to reach you</p>
 			
 			<div class="column spaced">
-				<div class="column label">
+				<div class="row">
 					<label for="date-picker">Date</label>
-					<input name="date-picker" type="date">
+					<input name="date-picker" type="date" min="{{dateLimitation}}" formControlName="date">
 				</div>
-				<div class="column label">
-					<label for="time-selector">Time</label>
-					<input name="time-selector" type="time">
+
+				<div class="row">
+					<label for="timeframe">Timeframe</label>
+					<select name="timeframe" type="time" formControlName="timeframe">
+						<option value="null" selected disabled hidden>Please choose a timeframe</option>
+						<option *ngFor="let timeframe of timeframes" value={{timeframe.timeframe}}>{{timeframe.description}}</option>
+					</select>
 				</div>
 			</div>
 		</div>
 		
 		<div class="column spaced">
-			<input type="reset" value="Clear All">
+			<button (click)="setStage(-1)">Previous</button>
+			<button (click)="setStage(1); reviewIntake()" [disabled]="!newIntakeForm.valid">Review</button>
+		</div>
+	</fieldset>
+
+	<fieldset *ngIf="currentPos == 4">
+		<legend>Overview</legend>
+		<table>
+			<tr class="user-details"><th>Contact Information</th><td><button (click)="setStage(-3)">Edit <span><img src="../../icons/iPencil_white.png" alt="edit"></span></button></td></tr>
+			<tr><th>Name: </th><td>{{serviceRequest.name}}</td></tr>
+			<tr><th>E-mail: </th><td>{{serviceRequest.email}}</td></tr>
+			<tr class="user-details"><th>Contact Reason</th><td><button (click)="setStage(-2)">Edit <span><img src="../../icons/iPencil_white.png" alt="edit"></span></button></td></tr>
+			<tr><th>Reason: </th><td>{{serviceRequest.reason}}</td></tr>
+			<tr *ngIf="serviceRequest.business_name != null"><th>Business Name: </th><td>{{serviceRequest.business_name}}</td></tr>
+			<tr><th>Services: </th><td>{{serviceRequest.services}}</td></tr>
+			<tr class="user-details"><th>Additional Information</th><td><button (click)="setStage(-1)">Edit <span><img src="../../icons/iPencil_white.png" alt="edit"></span></button></td></tr>
+			<tr><th>Notes: </th><td>{{serviceRequest.notes}}</td></tr>
+			<tr><th>Date: </th><td>{{serviceRequest.date}}</td></tr>
+			<tr><th>Timeframe: </th><td>{{serviceRequest.timeframe}}</td></tr>
+		</table>
+
+		<div class="column spaced">
 			<input type="submit" value="Submit">
 		</div>
 	</fieldset>

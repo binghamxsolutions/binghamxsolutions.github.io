@@ -1,74 +1,39 @@
-<article>
+<article (scroll)="colorHeader()">
 	<h1>Welcome to Your New Design!</h1>
-	
-	<section id="info">
-		<p>
-			Okay, so there is some work to be done here, but this is just one step to your goal! Whether 
-			you simply need a rough outline of how your website should look, a new logo to help revamp your 
-			business, or the whole website built, together we can make your digital solution something you'll 
-			want to share with the world!
-		</p>
 
-		<a class="help" id="cta" href="#next">See More!</a>
+	<section id="info" class="column">
+		<div class="row">
+			<h2>Hey there!</h2>
+			<p>
+				My name is Kashai and I put the "bingham" in bingam x solutions. I design logos, flyers, business cards, and websites.
+			</p>
+
+			<a id="cta" routerLink="contact">Sign up for a consultation!</a>
+		</div>
+
+		<app-contact-card></app-contact-card>
 	</section>
 
 	<section id="next-steps">
 		<h2>So what's next?</h2>
 		
-		<p>
-			Well, you have successfully completed the first step - choosing <b><a href="#">me</a></b> to help you build your digital
-			solution!  Now that that's out of the way, we should probably work on the process of actually 
-			<i>building</i> that solution, don't you think? <br><br>
-			
-			Generally speaking, the major components of any project are as follows: 
-		</p>
-		
-		<ol>
-			<li>Planning</li>
-			<li>Analysing</li>
-			<li>Designing</li>
-			<li>Implementing</li>
-		</ol>
-			
-		<p>	
-			But project management steps are supposed to be something that gets <b>integrated</b> into the 
-			process itself instead of treating them as a stand-alone tool so&hellip; Let's simplify things!
-			Below, you will find quick tips on what is left to do regardless of whether you want a logo design,
-			a web design, or a website (or page!) developed.<br><br>
-		</p>
-		
-		<div id="steps">
-			<table>
-			<tr><th>Brainstorm!</th></tr>
-			<tr><td>First things first, we need to get an idea of what you'd like. Logo? Design? Full site? (Maybe all of the above?)</td></tr>
-			</table>
-			
-			<table>
-			<tr><th>Color!</th></tr>
-			<tr><td>Next, we should determine what <i>colors</i> you'd prefer to tie everything together. Think of your grade-school color schemes.</td></tr>
-			</table>
-			
-			<table>
-			<tr><th>Build!</th></tr>
-			<tr><td>Finally! After everything else has been finalized (fonts, layouts, colors, mood), we can start on actually bringing your piece to life. This one's on me, though, so you can site back and relax for a bit.</td></tr>
-			</table>
+		<div class="options desktop column">
+			<button onclick="showDev('logos', this)">Logos</button>
+			<button onclick="showDev('flyers', this)">Flyers</button>
+			<button onclick="showDev('bsuiness_cards', this)">Business Cards</button>
+			<button onclick="showDev('websites', this)">Websites</button>
 		</div>
-		
-		
-		<div id="options">
-			<p>Still unsure of where to start?</p>
-			<a class="help" id="tips" href="help.html">Get more design tips</a>
-		</div>
-	</section>
 
-	<section id="next">
-		<h2>One Last Thing...</h2>
-		
-		<div class="more-info">
-			<div id="more">
-			<a class="help" id="price" href="pricing.html">Check <br>Prices</a>
-			<a class="help" id="example" href="samples.html">Get <br>Inspiration</a>
-			</div>
+		<select oninput="showDev(this.value, this.selectedIndex)" class="options mobile">
+			<option value="" selected disabled>Choose a Service Type</option>
+			<option value="logos">Logos</option>
+			<option value="flyers">Flyers</option>
+			<option value="bsuiness_cards">Business Cards</option>
+			<option value="websites">Websites</option>
+		</select>
+
+		<div>
+			
 		</div>
 	</section>
 </article>

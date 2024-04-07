@@ -1,5 +1,7 @@
 /*\GLOBAL VALUES\*/
 
+$bkgImageDetails: grey
+
 /**COLORS*/
 /*primary colors*/
 $fulvous: #e98a15
@@ -71,9 +73,6 @@ h6
 	font-family: Gentium
 	src: url(fonts//Gentium_Book_Plus//GentiumBookPlus-Regular.ttf)
 
-body 
-	font: normal 16px / 1em Gentium, serif
-
 /**DEPRECATED*/
 @font-face 
 	font-family: Typed
@@ -99,19 +98,37 @@ body
 
 
 /*\SHARED STYLES\*/
-@media screen and (max-width: 479px), (min-width: 480px) and (max-width: 767px) 
-	html, body 
-		min-height: 100vh
-
-/*DISPLAY*/
-body, article 
-	display: grid
-
+html, body, app-root
+	min-height: 100vh
 
 body 
-	grid-template-rows: max-content auto max-content
+	font: normal 16px / 1em Gentium, serif
+	//background: $bkgImageDetails
+app-root
+	display: grid
+	grid-template-rows: auto 2fr auto
 
+router-outlet
+	display: none
+article
+	min-height: 100%
 
+app-header, app-footer 
+	height: fit-content
+
+.row
+	display: grid
+	grid-auto-flow: row
+
+.column
+	display: grid
+	grid-auto-flow: column
+	&.center
+		justify-items: center
+	&.spaced
+		justify-content: space-evenly
+
+/*DISPLAY*/
 /*Alignment*/
 h1 
 	text-align: center
@@ -127,8 +144,6 @@ a
 p 
 	padding: 0% 20px
 
-.unsupported 
-	display: none
 
 /*UNSUPPORTED DEVICES*/
 @media screen and (max-width: 239px) 

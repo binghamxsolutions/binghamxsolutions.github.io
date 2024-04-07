@@ -1,37 +1,63 @@
+@import "src/styles.sass"
+
 form 
-	.row
-		display: grid
-		grid-auto-flow: row
+	color: $bone
+	progress
+		width: 100%
+		box-shadow: 1px 1px 3px $wenge
+	input
+		background-color: $ashGray
+		color: $darkPurple
+		&:focus
+			outline: 3px solid $earthYellow
+			border: inset $bone
 	.column
-		display: grid
-		grid-auto-flow: column
-		&.center
-			justify-items: center
-		&.spaced
-			justify-content: space-evenly
 		&.label
 			column-gap: 5px
-
-fieldset 
-	background-color: #000b35
-	color: white
-	display: grid
-	justify-content: left
-	row-gap: 15px
-	padding: 10px
-	border-radius: 15px
-	box-shadow: 2px 3px 5px black
-	&.row 
+	h2
+		text-align: center
+		text-shadow: 1px 1px 1px $darkPurple, 2px 3px 3px $ashGray
+		color: $silver
+	fieldset 
+		background-color: $ebony
 		display: grid
-		grid-auto-flow: row
-	&.column 
-		display: grid
-		grid-auto-flow: column
-p 
-	margin: 0
-	padding: 0
-legend
-	text-shadow: 1px 2px 5px red
-	font-weight: bold
-	font-size: 2em
-	margin: auto
+		justify-content: center
+		row-gap: 15px
+		padding: 10px
+		border-radius: 15px
+		box-shadow: 2px 3px 5px black
+		&.row 
+			display: grid
+			grid-auto-flow: row
+		&.column 
+			display: grid
+			grid-auto-flow: column
+		p 
+			margin: 0
+			padding: 0
+		legend
+			color: $earthYellow
+			text-shadow: 1px 2px 3px $darkPurple
+			font-weight: bold
+		table
+			justify-self: center
+			text-align: left
+			img
+				height: 1em
+			th
+				font-weight: normal
+			.user-details
+				border-bottom: 1px dotted $bone
+				th
+					font-weight: bold
+					font-style: italic
+		button, input[type="submit"]
+			background-color: $earthYellow
+			color: $darkPurple
+			border: none
+			border-radius: 3px
+			&:hover, &:focus
+				background-color: $ashGray
+			&:active
+				outline: outset $ebony
+				box-shadow: 1px 2px 3px $darkPurple

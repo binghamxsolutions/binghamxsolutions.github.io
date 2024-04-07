@@ -2,6 +2,7 @@
 @import "src/styles.sass"
 
 
+$bkgImageDetails: grey url(../../media/wireframe.jpg) 100% 100% / cover fixed no-repeat
 
 /*\SHARED STYLES\*/
 #steps table 
@@ -33,6 +34,14 @@ section
 	grid-template-columns: 70%
 	justify-content: center
 
+#info
+	grid-template-columns: 50% 30%
+	backdrop-filter: blur(20%)
+#cta
+	align-content: center
+	display: grid
+	padding: 15px
+	height: fit-content
 
 /*Alignment*/
 /*?content*/
@@ -47,11 +56,11 @@ section
 
 
 /*\GENERAL STYLES\*/
-article 
-	background: grey url(../../media/wireframe.jpg) 100% 100% / cover fixed no-repeat 
+:host 
+	background: $bkgImageDetails //grey url(../../media/wireframe.jpg) 100% 100% / cover fixed no-repeat 
 	backdrop-filter: blur(2px)
 
-header 
+header
 	background-color: transparent
 	transition: 0.5s
 	box-shadow: none
@@ -148,7 +157,10 @@ section
 #example:hover 
 	//background: #000 url("../../media/qfp_homepage.png") 100% 100% / cover no-repeat 
 
-
+	.mobile
+		diplay: none
+	.desktop
+		display: grid
 
 /*\SMALL SCREEN STYLES\*/
 @media screen and (min-width: 240px) and (max-width: 359px) 
@@ -169,6 +181,11 @@ section
 		grid-template-columns: unset 
 		row-gap: 35px
 
+	.mobile
+		diplay: grid
+	.desktop
+		display: none
+
 
 
 /*\MOBILE STYLES\*/
@@ -182,7 +199,10 @@ section
 		grid-auto-flow: row
 		grid-template-columns: unset 
 		row-gap: 50px
-
+	.mobile
+		diplay: grid
+	.desktop
+		display: none
 
 
 
