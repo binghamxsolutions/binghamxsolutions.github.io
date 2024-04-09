@@ -40,9 +40,9 @@
 		<div class="row">
 			<p>What do you need designed?</p>
 			
-			<div  formArrayName="services">
+			<div formGroupName="options">
 				<div *ngFor="let service of services; let i = index">
-					<input name="{{service.value}}" type="checkbox" id="{{service.value}}" formControlName="{{i}}">
+					<input name="{{service.id}}" type="checkbox" value={{service.name}} id="{{service.value}}" formControlName="{{service.value}}" (click)="toggleService(service.name)">
 					<label for="{{service.id}}">{{service.name}}</label>				
 				</div>
 			</div>
@@ -63,22 +63,11 @@
 		</div>
 		
 		<div class="row">
-			<p>Please provide a best timeframe to reach you</p>
-			
-			<div class="column spaced">
-				<div class="row">
-					<label for="date-picker">Date</label>
-					<input name="date-picker" type="date" min="{{dateLimitation}}" formControlName="date">
-				</div>
-
-				<div class="row">
-					<label for="timeframe">Timeframe</label>
-					<select name="timeframe" type="time" formControlName="timeframe">
-						<option value="null" selected disabled hidden>Please choose a timeframe</option>
-						<option *ngFor="let timeframe of timeframes" value={{timeframe.timeframe}}>{{timeframe.description}}</option>
-					</select>
-				</div>
-			</div>
+			<label for="timeframe">Please provide a best timeframe to reach you</label>
+			<select name="timeframe" type="time" formControlName="timeframe">
+				<option value="null" selected disabled hidden>Please choose a timeframe</option>
+				<option *ngFor="let timeframe of timeframes" value={{timeframe.timeframe}}>{{timeframe.description}}</option>
+			</select>
 		</div>
 		
 		<div class="column spaced">
@@ -99,7 +88,6 @@
 			<tr><th>Services: </th><td>{{serviceRequest.services}}</td></tr>
 			<tr class="user-details"><th>Additional Information</th><td><button (click)="setStage(-1)">Edit <span><img src="../../icons/iPencil_white.png" alt="edit"></span></button></td></tr>
 			<tr><th>Notes: </th><td>{{serviceRequest.notes}}</td></tr>
-			<tr><th>Date: </th><td>{{serviceRequest.date}}</td></tr>
 			<tr><th>Timeframe: </th><td>{{serviceRequest.timeframe}}</td></tr>
 		</table>
 

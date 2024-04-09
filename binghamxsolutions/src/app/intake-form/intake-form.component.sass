@@ -9,8 +9,8 @@ form
 		background-color: $ashGray
 		color: $darkPurple
 		&:focus
-			outline: 3px solid $earthYellow
-			border: inset $bone
+			outline: 2px solid $earthYellow
+			//border: inset $bone
 	.column
 		&.label
 			column-gap: 5px
@@ -61,3 +61,5 @@ form
 			&:active
 				outline: outset $ebony
 				box-shadow: 1px 2px 3px $darkPurple
+		button[disabled]
+			background-color: $ashGray

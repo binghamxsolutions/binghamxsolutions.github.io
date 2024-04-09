@@ -1,0 +1,64 @@
+@import "src/styles.sass"
+
+#label
+	background-color: $darkPurple
+	height: fit-content
+	filter: drop-shadow(2px 0px 2px $darkPurple)
+	h3
+		color: $earthYellow
+		text-align: center
+nav
+	background-color: $ebony
+	align-content: space-around
+	align-items: center
+	justify-items: center
+	*
+		padding: 2%
+	a
+		text-align: center
+		color: $bone
+		&:hover 
+			color: $earthYellow !important
+	img 
+		height: 20vh 
+		filter: drop-shadow(2px 2px 1px $ashGray)
+	#cta
+		outline: $earthYellow 1px solid
+		color: $earthYellow
+		border-radius: 10px
+		transition: border-radius 0.5s
+		&:hover
+			background-color: $earthYellow
+			color: $ebony !important
+			outline: $darkPurple 1px solid
+			border-radius: 0px
+	#socials 
+		justify-content: space-evenly
+		a
+			transition: translate 0.5s
+			&:hover
+				translate: 0 -5px
+				filter: drop-shadow(1px 1px 2px $ashGray)
+		img
+			height: 2em
+			filter: none
+
+	button 
+		background-color: $earthYellow
+		border-radius: 10px
+		border: 2px $darkPurple outset
+		color: $darkPurple
+		width: 25%
+		&:hover
+			cursor: pointer
+			font-weight: bold
+			border-style: inset
+	figure
+		display: grid
+		justify-items: center
+		img
+			height: 3em
+			filter: drop-shadow(0px 0px 1px $bone)
+		figcaption
+			text-align: center
+			color: $ashGray

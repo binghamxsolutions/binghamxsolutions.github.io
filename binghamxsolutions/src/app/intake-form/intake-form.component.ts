@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Validators, FormBuilder, FormArray, FormControlName} from '@angular/forms';
+import {Validators, FormBuilder, FormGroup, FormControl, FormArray} from '@angular/forms';
 
 
 
@@ -22,16 +22,16 @@ export class IntakeFormComponent {
     {"timeframe": "Evening", "description": "Evening (4pm to 6pm ET)"}
   ];
   services = [
-    {"id": 1, "value": "logo", "name": "Logo", "selected": false},
-    {"id": 2, "value": "business-card", "name": "Business Card", "selected": false},
-    {"id": 3, "value": "flyer", "name": "Flyer", "selected": false},
-    {"id": 4, "value": "website", "name": "Website", "selected": false}
+    {"id": 1, "value": "logo", "name": "Logo"},
+    {"id": 2, "value": "bCard", "name": "Business Card"},
+    {"id": 3, "value": "flyer", "name": "Flyer"},
+    {"id": 4, "value": "website", "name": "Website"}
   ];
   reasons = [
     {"id": "personal-reason", "value": "Personal", "label": "Personal Use"},
     {"id": "business-reason", "value": "Business", "label": "Business"},
   ];
-  serviceList: string[] = [];
+ serviceList: string[] = [];
   userMsg = '';
 
   newIntakeForm = this.formBuilder.group({
@@ -39,9 +39,14 @@ export class IntakeFormComponent {
     email: [<string | null>(null), Validators.pattern(this.emailRegex)],
     reason: <string | null>(null),
     business_name: <string | null>(null),
-    services: new FormArray([]),
+    options: new FormGroup({
+      website: new FormControl(),
+      flyer: new FormControl(),
+      bCard: new FormControl(),
+      logo: new FormControl(),
+    }),
+    services: <string[] | null>(null),
     notes: <string | null>(null),
-    date: <Date | null | string>(null),
     timeframe: <string | null>(null)
   });
 
@@ -76,22 +81,11 @@ export class IntakeFormComponent {
   }
 
   /**
-   * Toggles the boolean value passed to it.
-   * @param selected 
-   * @returns boolean
-   */
-  toggleSelection(selected: boolean):boolean {
-    if(selected == false) {
-      return true;
-    }
-    return false;
-  }
-
-  /**
-   * 
+   * Captures the services from the checked checkboxes in the form.
    * @param service 
-   */
+   */ 
   toggleService(service: string):void {
+    //this.newIntakeForm.controls.services
     if (this.serviceList.length == 0 || !this.serviceList.includes(service)) {
       this.serviceList.push(service);      
     } else {
@@ -99,33 +93,15 @@ export class IntakeFormComponent {
         if(item === service) this.serviceList.splice(index,1)
       });
     }
-
-    /*
-    if(selected == true) {
-      this.serviceList.push(service);
-    } else {
-      this.serviceList.forEach((item, index) => {
-        if(item === service) this.serviceList.splice(index,1);
-      });
+    this.newIntakeForm.controls.services.setValue(this.serviceList);
       //array removal code found on StackOverflow: https://stackoverflow.com/questions/15292278/how-do-i-remove-an-array-item-in-typescript  
-    }
-
-    this.services.forEach((item, index) => {
-      if(item.name === service) {
-        this.services.at(index)?.selected == selected;
-        console.log(this.services.at(index));
-        serviceItem.checked = selected;
-      }
-    });*/
   }
 
   /***
    * Sets the intake values for the end user to review
    */
   reviewIntake():void {
-    //this.newIntakeForm.controls.services.setValue(this.serviceList);
     this.serviceRequest = this.newIntakeForm.value;
-    console.log(this.serviceRequest);
   }
 
   /***
