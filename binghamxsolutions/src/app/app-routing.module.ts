@@ -7,7 +7,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full', title: "bingham x solutions"},
-  {path: '', component: HomeComponent, title: "bingham x solutions"},
   {path: 'contact', component: ContactComponent, title: "Contact | bingham x solutions"},
   {path: 'pricing', component: PricingComponent, title: "Pricing | bingham x solutions"},
   {path: '404', component: PageNotFoundComponent, title: "Page Not Found | bingham x solutions"},

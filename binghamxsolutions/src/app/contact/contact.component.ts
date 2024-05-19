@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ClientIntakeService } from '../client-intake.service';
 
 @Component({
   selector: 'app-contact',
@@ -6,16 +7,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact.component.sass']
 })
 export class ContactComponent {
-  submitted = false;
+  submissionStatus?: boolean;
   status = '';
+  message = '';
+
+  submission = [
+    {"status": "success", "feedback": "Thanks! You'll get an email shortly confirming we've received your request. \n\nPlease give us 24-48 business hours to respond."},
+    {"status": "error", "feedback": "There was an issue submitting your service request. Please try again later."},
+    {"status": "null", "feedback": "Thanks for your interest, but without an email, we will not be able to contact you!"}
+  ];
+
+  constructor (private clientIntakeService: ClientIntakeService) { }
+
+  checkSubmissionStatus() {
+    this.submissionStatus = this.clientIntakeService.getStatus();
+  }
 
   outputMessage():void {
-    enum UserMessage {
-      NoEmail = "Thanks for your interest, but without an email, we will not be able to contact you!",
-      NoIssue = "Thanks! You'll get an email shortly confirming we've received your request. \n\nPlease give us 24-48 business hours to respond.",
-      Error = "There was an issue submitting your service request. Please try again later."
-    };
-
+    this.submission.forEach(response => {
+      if (this.clientIntakeService.status == response.status) {
+        this.message = response.feedback;
+      }
+    });
     /*
     if (user_name == null && email == null) {
       this.userMsg = UserMessage.NoEmail;
@@ -24,5 +37,4 @@ export class ContactComponent {
     }
     */
   }
-
 }

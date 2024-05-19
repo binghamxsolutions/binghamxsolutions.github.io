@@ -1,39 +1,35 @@
-<article (scroll)="colorHeader()">
+<article>
 	<h1>Welcome to Your New Design!</h1>
 
 	<section id="info" class="column">
 		<div class="row">
 			<h2>Hey there!</h2>
 			<p>
-				My name is Kashai and I put the "bingham" in bingam x solutions. I design logos, flyers, business cards, and websites.
+				My name is Kashai and I put the "bingham" in bingham x solutions. I'm a front-end web developer and UI designer.
 			</p>
 
-			<a id="cta" routerLink="contact">Sign up for a consultation!</a>
+			<a id="cta" routerLink="contact">Contact me!</a>
 		</div>
-
-		<app-contact-card></app-contact-card>
 	</section>
 
 	<section id="next-steps">
-		<h2>So what's next?</h2>
+		<h2>Samples</h2>
 		
-		<div class="options desktop column">
-			<button onclick="showDev('logos', this)">Logos</button>
-			<button onclick="showDev('flyers', this)">Flyers</button>
-			<button onclick="showDev('bsuiness_cards', this)">Business Cards</button>
-			<button onclick="showDev('websites', this)">Websites</button>
+		<div class="options column">
+			<button *ngFor="let service of services" class="{{service.id}}" (click)="showSample(service.id)">{{service.name}}</button>
 		</div>
 
-		<select oninput="showDev(this.value, this.selectedIndex)" class="options mobile">
-			<option value="" selected disabled>Choose a Service Type</option>
-			<option value="logos">Logos</option>
-			<option value="flyers">Flyers</option>
-			<option value="bsuiness_cards">Business Cards</option>
-			<option value="websites">Websites</option>
-		</select>
-
-		<div>
-			
+		<div *ngIf="currentSample == 'bCard'" class="content bCard">
+			This is for Business Cards!!
+		</div>
+		<div *ngIf="currentSample == 'logo'" class="content logo">
+			This is for Logos!!
+		</div>
+		<div *ngIf="currentSample == 'flyer'" class="content flyer">
+			This is for Flyers!!
+		</div>
+		<div *ngIf="currentSample == 'website'" class="content website">
+			This is for Websites!!
 		</div>
 	</section>
 </article>

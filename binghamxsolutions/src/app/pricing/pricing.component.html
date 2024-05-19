@@ -2,14 +2,16 @@
 	<h1>Pricing</h1>
 
 	<section>
-		<div class="pricing basic">
-			<div class="price-card">
+		<div id="services">
+			<div *ngFor="let service of services" class="service column">
+				<div class="description">
+					<div *ngIf="isDisplayed(service.id)" class="{{service.id}}">
+						<h3>Starting at &dollar;{{service.price}}</h3>
+						<p>{{service.description}}</p>
+					</div>
+				</div>
 
-			</div>
-		</div>
-
-		<div class="pricing standard">
-			<div class="price-card">
+				<button class="{{service.id}}" (click)="showPrice(service.id)">{{service.name}}</button>
 			</div>
 		</div>
 	</section>

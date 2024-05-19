@@ -38,14 +38,8 @@
 		</div>
 
 		<div class="row">
-			<p>What do you need designed?</p>
-			
-			<div formGroupName="options">
-				<div *ngFor="let service of services; let i = index">
-					<input name="{{service.id}}" type="checkbox" value={{service.name}} id="{{service.value}}" formControlName="{{service.value}}" (click)="toggleService(service.name)">
-					<label for="{{service.id}}">{{service.name}}</label>				
-				</div>
-			</div>
+			<label for="services">What do you need?</label>				
+			<textarea name="services" id="services" formControlName="services" row="4" placeholder="Type here..."></textarea>
 		</div>
 
 		<div class="column spaced">
@@ -58,16 +52,21 @@
 		<!-- Additional Information -->
 		<legend>Additional Information</legend>
 		<div class="row">
-			<label for="notes">Is there any additional information you would like to share?</label>
-			<textarea name="notes" cols="10" rows="5" placeholder="Enter your additional notes here..." formControlName="notes"></textarea>
-		</div>
-		
-		<div class="row">
 			<label for="timeframe">Please provide a best timeframe to reach you</label>
 			<select name="timeframe" type="time" formControlName="timeframe">
 				<option value="null" selected disabled hidden>Please choose a timeframe</option>
 				<option *ngFor="let timeframe of timeframes" value={{timeframe.timeframe}}>{{timeframe.description}}</option>
 			</select>
+		</div>
+		
+		<div class="row">
+			<label for="budget">What is your budget? (In USD)</label>
+			<input id="budget" type="number" name="budget" min="0" value="0" formControlName="budget">
+		</div>
+		
+		<div class="row">
+			<label for="notes">Is there any additional information you would like to share?</label>
+			<textarea name="notes" cols="10" rows="5" placeholder="Enter your additional notes here..." formControlName="notes"></textarea>
 		</div>
 		
 		<div class="column spaced">
@@ -87,8 +86,9 @@
 			<tr *ngIf="serviceRequest.business_name != null"><th>Business Name: </th><td>{{serviceRequest.business_name}}</td></tr>
 			<tr><th>Services: </th><td>{{serviceRequest.services}}</td></tr>
 			<tr class="user-details"><th>Additional Information</th><td><button (click)="setStage(-1)">Edit <span><img src="../../icons/iPencil_white.png" alt="edit"></span></button></td></tr>
-			<tr><th>Notes: </th><td>{{serviceRequest.notes}}</td></tr>
 			<tr><th>Timeframe: </th><td>{{serviceRequest.timeframe}}</td></tr>
+			<tr><th>Budget: </th><td>&dollar;{{serviceRequest.budget}}</td></tr>
+			<tr><th>Notes: </th><td>{{serviceRequest.notes}}</td></tr>
 		</table>
 
 		<div class="column spaced">

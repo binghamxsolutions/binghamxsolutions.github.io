@@ -5,10 +5,30 @@ import { ClientIntake } from './client-intake';
   providedIn: 'root'
 })
 export class ClientIntakeService {
-
+  public status = "";
+  public isSubmitted = true;
+  
   constructor() { }
 
-  getIntake() {}
+  getIntake() { 
+    //TODO create a function to retrieve the intake 
+  }
 
-  setIntake():void {}
+  getStatus():boolean {
+    return this.isSubmitted;
+  }
+
+  setIntake(clientIntake: ClientIntake):void {
+    //TODO create a function to store the intake 
+  }
+
+  sendIntake() {
+    // if (11) {
+    //   this.status = "null";
+    // } else if (this.isSubmitted /* set html header == 200 for ok status */) {
+    //   this.status = "success";
+    // } else {
+    //   this.status = "error";
+    // }
+  }
 }

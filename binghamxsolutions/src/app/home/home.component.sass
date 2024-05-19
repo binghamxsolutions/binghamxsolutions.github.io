@@ -1,9 +1,6 @@
 @charset "utf-8"
 @import "src/styles.sass"
 
-
-$bkgImageDetails: grey url(../../media/wireframe.jpg) 100% 100% / cover fixed no-repeat
-
 /*\SHARED STYLES\*/
 #steps table 
 	border-collapse: collapse
@@ -17,6 +14,27 @@ $bkgImageDetails: grey url(../../media/wireframe.jpg) 100% 100% / cover fixed no
 section, #steps, #options, .more-info, #more 
 	display: grid
 
+.bCard
+	background-color: $battleshipGray
+.flyer
+	background-color: $earthYellow
+.logo
+	background-color: $wenge
+.website
+	background-color: $ashGray
+.options
+	border-color: $darkPurple
+	button
+		font: bold 1em / 1.15em Elite, monospace
+		border: none
+		padding: 3%
+		&:active
+			filter: invert(5%)
+		&:hover
+			filter: invert(15%)
+			outline: outset
+.content
+	padding: 2%
 
 /*GRID STYLES*/
 /*section row-gap: 20px*/
@@ -35,7 +53,6 @@ section
 	justify-content: center
 
 #info
-	grid-template-columns: 50% 30%
 	backdrop-filter: blur(20%)
 #cta
 	align-content: center
@@ -56,10 +73,6 @@ section
 
 
 /*\GENERAL STYLES\*/
-:host 
-	background: $bkgImageDetails //grey url(../../media/wireframe.jpg) 100% 100% / cover fixed no-repeat 
-	backdrop-filter: blur(2px)
-
 header
 	background-color: transparent
 	transition: 0.5s
@@ -161,10 +174,16 @@ section
 @media screen and (min-width: 240px) and (max-width: 359px) 
 	section 
 		padding: 0px
+		justify-items: center
 		p 
 			padding: 0px
 		h2
 			text-align: center
+	#info
+		grid-auto-flow: row
+		grid-template-columns: unset
+		text-align: center
+		row-gap: 25px
 	.more-info 
 		justify-content: center
 
@@ -187,6 +206,11 @@ section
 @media screen and (min-width: 360px) and (max-width: 479px) 
 	section h2
 		text-align: center
+	#info
+		grid-auto-flow: row
+		grid-template-columns: unset
+		text-align: center
+		row-gap: 35px
 	#steps
 		grid-auto-flow: row 
 		row-gap: 15px	

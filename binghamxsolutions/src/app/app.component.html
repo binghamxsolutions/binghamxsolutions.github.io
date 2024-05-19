@@ -1,7 +1,7 @@
 <app-unsupported-message></app-unsupported-message>
 <app-header> <!-- sets a static header --> </app-header>
 
-<router-outlet> <!-- routes to the various pages --> </router-outlet>  
+<router-outlet> <!-- routes to various pages in the web app --> </router-outlet>  
 	
-<app-to-top-button (scroll)="toTop()"></app-to-top-button>
+<app-to-top-button *ngIf="pageAtTop"> <!-- displays a button that scrolls back to the top of the page --></app-to-top-button>
 <app-footer> <!-- sets a static footer --> </app-footer>

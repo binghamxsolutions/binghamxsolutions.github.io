@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import {Validators, FormBuilder, FormGroup, FormControl, FormArray} from '@angular/forms';
+import { Component } from '@angular/core';
+import { Validators, FormBuilder } from '@angular/forms';
+import { ClientIntakeService } from '../client-intake.service';
+import { ClientIntake } from '../client-intake';
 
 
 
 @Component({
-  //standalone: true,
-  //template: 'First Name: <input type="text" [formControl]="intakeFormControl"',
   selector: 'app-intake-form',
   templateUrl: './intake-form.component.html',
   styleUrls: ['./intake-form.component.sass']
@@ -39,19 +39,14 @@ export class IntakeFormComponent {
     email: [<string | null>(null), Validators.pattern(this.emailRegex)],
     reason: <string | null>(null),
     business_name: <string | null>(null),
-    options: new FormGroup({
-      website: new FormControl(),
-      flyer: new FormControl(),
-      bCard: new FormControl(),
-      logo: new FormControl(),
-    }),
-    services: <string[] | null>(null),
+    services: <string | null>(null),
     notes: <string | null>(null),
-    timeframe: <string | null>(null)
+    timeframe: <string | null>(null),
+    budget: <number | null>(null)
   });
 
   serviceRequest = this.newIntakeForm.value;
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private clientIntakeService: ClientIntakeService) { }
   
   /**
    * Sets the current stage in a multi-step form.
@@ -80,23 +75,6 @@ export class IntakeFormComponent {
     }
   }
 
-  /**
-   * Captures the services from the checked checkboxes in the form.
-   * @param service 
-   */ 
-  toggleService(service: string):void {
-    //this.newIntakeForm.controls.services
-    if (this.serviceList.length == 0 || !this.serviceList.includes(service)) {
-      this.serviceList.push(service);      
-    } else {
-      this.serviceList.forEach((item, index) => {
-        if(item === service) this.serviceList.splice(index,1)
-      });
-    }
-    this.newIntakeForm.controls.services.setValue(this.serviceList);
-      //array removal code found on StackOverflow: https://stackoverflow.com/questions/15292278/how-do-i-remove-an-array-item-in-typescript  
-  }
-
   /***
    * Sets the intake values for the end user to review
    */
@@ -108,16 +86,18 @@ export class IntakeFormComponent {
    * Submits the intake form
    * @todo Add back-end processes for the intake submission to send via email
    */
-  sendNewIntake() {
+  sendNewIntake():void {
     this.currentPos = 1;
     this.progress = 33.33;
     const user_name = this.serviceRequest.name;
     const email = this.serviceRequest.email;
 
-    if (user_name == null && email == null) {
-      return "delay";
-    } else {
-      return "pass";
-    }
+    // if (user_name == null && email == null) {
+    //   return "delay";
+    // } else {
+    //   return "pass";
+    // }
+
+    this.clientIntakeService.setIntake(this.newIntakeForm.value as ClientIntake);
   }
 }
