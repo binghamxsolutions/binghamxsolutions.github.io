@@ -6,20 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent {
-  services = [
-    {"id": "bCard", "name": "Business Cards"},
-    {"id": "logo", "name": "Logos"},
-    {"id": "flyer", "name": "Flyers"},
-    {"id": "website", "name": "Websites"}
-  ];
-  currentSample = "";
-
-  constructor() { this.showSample("bCard") }
-
-  showSample(className: string) {
-    this.currentSample = className;
-  }
-
   // colorHeader() {
   //   var header = document.getElementsByTagName("header")[0];
     

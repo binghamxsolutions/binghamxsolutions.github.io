@@ -4,7 +4,7 @@ header
 	display: grid
 	grid-auto-flow: column
 	align-items: center
-	background-color: $wenge	
+	background-color: $cinereous	
 	padding: 15px
 	box-shadow: 0px 0px 3px #000
 	.small-device, .mobile 
@@ -14,8 +14,6 @@ header
 	filter: drop-shadow(1px 1px 2px $darkPurple)
 	:hover 
 		filter: drop-shadow(0px 1px 1px $ebony)
-	img 
-		height: 20vh
 .focus 
 	font-weight: bold
 	text-decoration: 2px underline
@@ -44,7 +42,7 @@ app-menu
 	top: 0
 	right: 0
 	grid-template-rows: max-content auto
-	box-shadow: -2px 0px 3px $ebony
+	box-shadow: -2px 0px 3px $darkPurple
 
 /*SMALL MOBILE DEVICES*/
 @media screen and (min-width: 240px) and (max-width: 359px) 
@@ -55,6 +53,8 @@ app-menu
 			display: grid
 		app-menu
 			width: 90vw
+		#logo img
+			height: 20vh
 
 
 /*MOBILE STYLES*/
@@ -64,5 +64,6 @@ app-menu
 			display: none
 		.mobile 
 			display: grid
+
 	app-menu
 		width: 70vw

@@ -16,6 +16,7 @@ import { PricingComponent } from './pricing/pricing.component';
 import { ContactCardComponent } from './contact-card/contact-card.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MenuComponent } from './menu/menu.component';
+import { SamplesComponent } from './samples/samples.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MenuComponent } from './menu/menu.component';
     IntakeFormComponent,
     ContactCardComponent,
     PageNotFoundComponent,
-    MenuComponent
+    MenuComponent,
+    SamplesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,37 @@
+@charset "utf-8"
+@import "src/styles.sass"
+
+section 
+	color: $darkPurple
+	background-blend-mode: luminosity
+	p
+		text-shadow: -1px 1px 1px $bone
+	a 
+		color: $darkPurple
+		text-decoration: 1px underline $fulvous
+	h2 
+		color: $bone
+		text-shadow: -1px 1px $cinereous
+
+
+.bCard
+	background-color: $cinereous
+.flyer
+	background-color: $buff
+.logo
+	background-color: $earthYellow
+.website
+	background-color: $bone
+.options
+	border-color: $darkPurple
+	button
+		font: bold 1em / 1.15em Elite, monospace
+		border: none
+		padding: 3%
+		&:active
+			filter: invert(5%)
+		&:hover
+			filter: invert(15%)
+			outline: outset
+.content
+	padding: 2%

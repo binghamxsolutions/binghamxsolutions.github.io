@@ -1,10 +1,8 @@
 @import 'src/styles.sass'
 
-/*\SHARED STYLES\*/
-
-
-
 /*DISPLAY*/
+h1
+	color: $bone
 section, #services, .service, .description
 	display: grid
 #services
@@ -14,17 +12,24 @@ section, #services, .service, .description
 		grid-template-columns: 70% auto
 		button
 			border: none
-			font-size: 1.75em
-			font-weigth: bold
+			font-size: 1.5em
+			font-weight: bold
 			text-align: center
 			&:hover
 				filter: invert(15%)
 
 .bCard
-	background-color: $fulvous
+	background-color: $cinereous
 .logo
-	background-color: $bone
+	background-color: $earthYellow
 .flyer
-	background-color: $wenge
+	background-color: $buff
 .website
-	background-color: $ashGray
+	background-color: $bone
+
+/*\MOBILE STYLES\*/
+@media screen and (min-width: 240px) and (max-width: 479px) 
+	#services
+		.service
+			grid-template-columns: 60% auto
+			width: 100%
