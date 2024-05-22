@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class PageNotFoundComponent {
   links = [
     {"url": "/", "name": "Home" },
+    {"url": "/samples", "name": "Samples" },
     {"url": "/pricing", "name": "Pricing" },
     {"url": "/contact", "name": "Contact" }
   ];

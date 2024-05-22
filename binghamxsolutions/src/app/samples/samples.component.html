@@ -2,14 +2,14 @@
 	<h1>Samples</h1>
 	
 	<section id="next-steps">		
-		<div class="options column">
-			<button *ngFor="let service of services" class="{{service.id}}" (click)="showSample(service.id)">{{service.name}}</button>
+		<div id="tabs" class="options column">
+			<button *ngFor="let service of services" id="{{service.id}}" class="{{service.id}}" (click)="showSample(service.id)">{{service.name}}</button>
 		</div>
 
 		<div *ngIf="currentSample == 'bCard'" class="content bCard">
 			This is for Business Cards!!
 		</div>
-		<div *ngIf="currentSample == 'logo'" class="content logo">
+		<div *ngIf="currentSample == 'logos'" class="content logos">
 			This is for Logos!!
 		</div>
 		<div *ngIf="currentSample == 'flyer'" class="content flyer">

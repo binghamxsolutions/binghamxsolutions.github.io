@@ -8,15 +8,28 @@ import { Component } from '@angular/core';
 export class SamplesComponent {
   services = [
     {"id": "bCard", "name": "Business Cards"},
-    {"id": "logo", "name": "Logos"},
+    {"id": "logos", "name": "Logos"},
     {"id": "flyer", "name": "Flyers"},
     {"id": "website", "name": "Websites"}
   ];
-  currentSample = "";
-
-  constructor() { this.showSample("bCard") }
+  currentSample = "bCard";
+  
+  constructor() { }
 
   showSample(className: string) {
     this.currentSample = className;
+
+    var currentTab = document.getElementById(className);
+    var tabs = document.getElementById('tabs')?.querySelectorAll("button");
+
+    for (var i = 0; i < tabs!.length; i++) {
+      tabs![i].style.width = "initial";
+      tabs![i].style.zIndex = "initial";
+      tabs![i].style.boxShadow = "none";
+    }
+
+    currentTab!.style.minWidth = "fit-content";
+    currentTab!.style.zIndex = "5";
+    currentTab!.style.boxShadow = "1px 0px 5px black"
   }
 }

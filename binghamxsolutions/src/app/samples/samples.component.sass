@@ -1,7 +1,13 @@
 @charset "utf-8"
 @import "src/styles.sass"
 
+
+article
+	display: grid
+	justify-content: center
+
 section 
+	width: 70vw
 	color: $darkPurple
 	background-blend-mode: luminosity
 	p
@@ -13,25 +19,39 @@ section
 		color: $bone
 		text-shadow: -1px 1px $cinereous
 
-
+#bCard
+	min-width: fit-content
+	z-index: 5
+	box-shadow: 1px 0px 5px black
 .bCard
 	background-color: $cinereous
 .flyer
-	background-color: $buff
-.logo
+	background-color: $bone
+.logos
 	background-color: $earthYellow
 .website
-	background-color: $bone
+	background-color: $khaki
 .options
+	grid-template-columns: repeat(auto-fit, 25%)
 	border-color: $darkPurple
 	button
 		font: bold 1em / 1.15em Elite, monospace
-		border: none
+		border: outset 1px 1px 0px 1px
+		border-radius: 10px 10px 0px 0px
+		position: relative
+		text-overflow: clip
+		overflow: hidden
+		white-space: nowrap
 		padding: 3%
+		//width: fit-content
+		//z-index: 5
+		//box-shadow: 2px 0px 4px black
 		&:active
 			filter: invert(5%)
 		&:hover
 			filter: invert(15%)
-			outline: outset
+			border: inset 2px
 .content
 	padding: 2%
+	border: inset 0px 1px 1px 1px
+	box-shadow: 2px 0px 2px black

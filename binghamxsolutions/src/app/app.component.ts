@@ -9,9 +9,9 @@ import { ToTopService } from './to-top.service';
 export class AppComponent {
   pageAtTop?: boolean;
 
-  constructor(private toTopService: ToTopService) { this.checkStatus() }
-
-  checkStatus() {
-    this.pageAtTop = this.toTopService.getState();
+  constructor(private toTopService: ToTopService) { 
+    window.addEventListener('scroll', () => {
+      this.pageAtTop = this.toTopService.getState();
+    }); 
   }
 }
