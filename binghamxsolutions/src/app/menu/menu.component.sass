@@ -3,7 +3,7 @@
 #label
 	background-color: $buff
 	height: fit-content
-	filter: drop-shadow(2px 0px 2px $darkPurple)
+	filter: drop-shadow(2px 0px 2px $oxfordBlue)
 	h3
 		color: $ebony
 		text-align: center
@@ -46,13 +46,15 @@ nav
 	button 
 		background-color: $earthYellow
 		border-radius: 10px
-		border: 2px $darkPurple outset
+		border: 1px $darkPurple outset
 		color: $darkPurple
+		font-weight: bold
 		width: 25%
+		transition: box-shadow .5s
 		&:hover
 			cursor: pointer
-			font-weight: bold
-			border-style: inset
+			box-shadow: 1px 1px 3px $oxfordBlue
+			background-color: $buff
 	figure
 		display: grid
 		justify-items: center

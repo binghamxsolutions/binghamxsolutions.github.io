@@ -2,56 +2,57 @@
 @import "src/styles.sass"
 
 /*\SHARED STYLES\*/
-#info
-	backdrop-filter: blur(20%)
-	justify-content: center
-	p 
-	filter: drop-shadow(1px 1px #000)
-	color: $earthYellow
-	text-shadow: -2px 1px 2px $darkPurple
-section
+article
 	display: grid
-	grid-template-columns: 70%
-	justify-content: center
-	padding: 15px
-
-#cta a
-	align-content: center
-	display: grid
-	padding: 15px
-	height: fit-content
-	justify-self: center
-	border: none
-	border-radius: 3px
-	color: #fff
-	filter: drop-shadow(-1px 1px 3px $cinereous)
-	font-weight: bold
-	/*styles the cta buttons*/
-	&#sample
-		background-color: $buff
-		&:hover
-			background-color: $fulvous
-	&#contact
-		background-color: $ebony
-		&:hover
-			background-color: $fulvous
-
-
-
-/*\GENERAL STYLES\*/
-h1 
-	color: $cinereous
-	text-shadow: -3px -3px 2px $darkPurple
+	backdrop-filter: contrast(70%) blur(5px)
+	h1
+		width: 70vw
+		justify-self: center
+		align-self: center
+		text-align: left
+		text-shadow: 3px 3px 3px $darkPurple
+		color: $khaki
+	section
+		display: grid
+		grid-template-columns: 70%
+		justify-content: center
+		padding: 15px
+		justify-content: center
+		p 
+			color: $oxfordBlue
+			font-size: 20px
+		#cta a
+			align-content: center
+			display: grid
+			padding: 15px
+			height: fit-content
+			justify-self: center
+			border-radius: 3px
+			filter: drop-shadow(1px 3px 3px $darkPurple)
+			font-weight: bold
+			/*styles the cta buttons*/
+			&#sample
+				color: $oxfordBlue
+				background-color: $battleshipGray
+				border: $ashGray 3px inset
+				&:hover
+					background-color: $fulvous
+			&#contact
+				color: $bone
+				background-color: $oxfordBlue
+				border: $bone 3px inset
+				&:hover
+					background-color: $fulvous
 
 
 /*\SMALL SCREEN STYLES\*/
 @media screen and (min-width: 240px) and (max-width: 359px) 
-	section 
+	article 
 		padding: 0px
 		justify-items: center
 		p 
 			padding: 0px
-		h2
+		h1
 			text-align: center
 	#info
 		grid-auto-flow: row
@@ -68,7 +69,7 @@ h1
 
 /*\MOBILE STYLES\*/
 @media screen and (min-width: 360px) and (max-width: 479px) 
-	section h2
+	article h1
 		text-align: center
 	#info
 		grid-auto-flow: row

@@ -3,7 +3,16 @@
 article
 	display: grid
 	grid-auto-flow: column
-	padding: 15px 0px
 	justify-content: space-around
+	backdrop-filter: contrast(70%) blur(5px)
 	align-items: center
 	min-height: 100%
+	h1
+		color: $caramel
+		-webkit-text-stroke: $earthYellow 1px
+		text-shadow: 1px 1px 2px $darkPurple
+
+@media screen and (min-width: 240px) and (max-width: 500px) 
+	article
+		grid-auto-flow: row
+		padding: 30px

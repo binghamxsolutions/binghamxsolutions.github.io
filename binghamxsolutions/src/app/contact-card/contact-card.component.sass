@@ -33,37 +33,49 @@
 	filter: drop-shadow(-10px -10px $cinereous)
 	animation: float 3s linear infinite
 	padding: 30px
-	row-gap: 15px
-	figure 
-		margin: 0px
-	figcaption 
-		text-align: center 
-		font-weight: bold
-		margin: 5px
-	p 
-		font-style: italic 
-		margin: 0px 
-		text-align: center
-	#send-email 
+	row-gap: 50px
+	#about
+		display: grid
+		row-gap: 10px
+		figure 
+			margin: 0px
+			#profile-pic 
+				width: 150px
+				height: 150px
+				object-fit: cover
+				border-radius: 50%
+				border: double $ebony 5px
+				filter: drop-shadow(-3px 3px 3px $darkPurple)
+			figcaption 
+				text-align: center 
+				margin: 5px
+		h6
+			margin: 0
+			text-align: center
+			color: $ebony
+			//font-weight: bold
+		p 
+			margin: 0px 
+			text-align: center
+			color: $darkPurple
+			font-style: italic 
+	#send-email
+		background-color: $darkPurple
+		color: $caramel
+	#send-email
 		border: none
 		padding: 15px
 		filter: drop-shadow(1px 1px 3px $fulvous)
 		border-radius: 2px
 		font-size: 1.5em
-		background-color: $darkPurple
-		color: $caramel
+		text-align: center
 		&:hover 
 			cursor: pointer
 			outline: inset $fulvous
 		&:active 
 			background-color: $fulvous
 			color: $darkPurple
-	.profile-pic 
-		width: 150px
-		height: 150px
-		object-fit: cover
-		border-radius: 50%
-		border: double $ebony 5px
+
 
 /*\SMALL SCREEN STYLES\*/
 @media screen and (min-width: 240px) and (max-width: 359px) 
@@ -83,6 +95,5 @@
 
 /*\TABLET STYLES\*/
 @media screen and (min-width: 480px) and (max-width: 767px) 
-
 	.contact-card 
 		animation: floatMobile 3s linear infinite
