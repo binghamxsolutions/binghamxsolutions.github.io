@@ -1,0 +1,320 @@
+@charset "utf-8"
+
+/*\GLOBAL VALUES\*/
+
+/**COLORS*/
+/*primary colors*/
+$fulvous: #e98a15
+$darkPurple: #260c1a
+$ebony: #5b5941
+
+/*secondary colors*/
+$earthYellow: #e8b471
+$wenge: #77686c
+$battleshipGray: #989683
+
+
+/*accent colors*/
+$bone: #e7decd
+$silver: #afa39d
+$ashGray: #bdbaa8
+
+/*background colors*/
+$vanDyke: #433a3a
+$brownSugar: #ae705f
+$frenchGray: #c1c2cb
+
+/*logotype*/
+@font-face 
+	font-family: Elite
+	src: url(fonts//Special_Elite//SpecialElite-Regular.ttf)
+
+
+/*headings*/
+@font-face 
+	font-family: Lv1
+	src: url(fonts//Poppins//Poppins-Black.ttf)
+
+h1 
+	font: normal 48px / 1em Lv1, san-serif
+
+@font-face 
+	font-family: Lv2
+	src: url(fonts//Poppins//Poppins-SemiBold.ttf)
+
+h2 
+	font: normal 36px / 1em Lv2, san-serif
+
+@font-face 
+	font-family: Lv3
+	src: url(fonts//Poppins//Poppins-MediumItalic.ttf)
+
+h3 
+	font: normal 28px / 1em Lv3, san-serif
+
+@font-face 
+	font-family: Lv4
+	src: url(fonts//Poppins//Poppins-Regular.ttf)
+
+h4 
+	font: normal 24px / 1em Lv4, san-serif
+
+@font-face 
+	font-family: Lv5
+	src: url(fonts//Poppins//Poppins-LightItalic.ttf)
+
+h5 
+	font: normal 20px / 1em Lv5, san-serif
+
+@font-face 
+	font-family: Lv6
+	src: url(fonts//Poppins//Poppins-ExtraLight.ttf)
+
+h6 
+	font: normal 18px / 1em Lv6, san-serif
+
+
+/*body*/
+@font-face 
+	font-family: Gentium
+	src: url(fonts//Gentium_Book_Plus//GentiumBookPlus-Regular.ttf)
+
+body 
+	font: normal 16px / 1em Gentium, serif
+
+
+
+/**DEPRECATED*/
+@font-face 
+	font-family: Typed
+	src: url(..\\fonts\\Cutive_Mono\\CutiveMono-Regular.ttf)
+
+@font-face 
+	font-family: Name
+	src: url(..\\fonts\\Dr_Sugiyama\\DrSugiyama-Regular.ttf)
+
+@font-face 
+	font-family: Label
+	src: url(..\\fonts\\Special_Elite\\SpecialElite-Regular.ttf)
+
+@font-face 
+	font-family: Header
+	src: url(..\\fonts\\Love_Light\\LoveLight-Regular.ttf)
+
+@font-face 
+	font-family: Glitch
+	src: url(..\\fonts\\Rubik_Glitch\\RubikGlitch-Regular.ttf)
+
+
+/*\SHARED STYLES\*/
+@media screen and (max-width: 479px), (min-width: 480px) and (max-width: 767px) 
+html, body 
+	min-height: 100vh
+
+/*DISPLAY*/
+body, header, header nav, .content 
+	display: grid
+.small-device, .mobile 
+	display: none
+
+/*GRID STYLES*/
+header nav 
+	align-content: center
+header, header nav 
+	grid-auto-flow: column
+	align-items: center
+
+
+body 
+	grid-template-rows: max-content auto max-content
+
+
+/*Alignment*/
+h1, footer 
+	text-align: center
+body, footer 
+	margin: 0px
+
+
+/*\GENERAL STYLES\*/
+html 
+	scroll-behavior: smooth
+
+.to-top 
+	display: none
+	position: sticky
+	background-color: $bone
+	font-weight: bold
+	font-size: 24px
+	padding: 15px
+	border-radius: 10px
+	bottom: 75px
+	right: 1%
+	box-shadow: 2px 2px 5px #000
+	color: #000
+	z-index: 10
+	width: fit-content
+	justify-self: right
+	:hover 
+		background-color: $silver
+	img 
+		height: 5vh
+
+a 
+	text-decoration: none
+
+p 
+	padding: 0% 20px
+
+header 
+	background-color: $darkPurple
+	position: sticky
+	top: 0px	
+	padding: 15px
+	z-index: 10
+	box-shadow: 0px 0px 3px #000
+	justify-content: center
+	img 
+		height: 20vh 
+		transition: 2s
+	#logo:hover 
+		transform: skewY(5deg)
+		filter: drop-shadow(-2px -1px 3px $vanDyke)
+		.mobile 
+			display: none
+
+.content 
+	grid-template-columns: 75% auto
+	column-gap: 25px
+	h2 
+		text-align: center
+
+footer 
+	background-color: $darkPurple
+	color: $bone
+	display: grid
+	justify-content: space-around
+	grid-auto-flow: row
+	align-items: center
+	height: fit-content
+	#tagline
+		color: $earthYellow
+
+
+.unsupported 
+	display: none
+
+/*UNSUPPORTED DEVICES*/
+@media screen and (max-width: 239px) 
+	body 
+		overflow: hidden
+
+	.unsupported 
+		display: grid 
+		position: sticky 
+		top: 0
+		background-color: #0007 
+		backdrop-filter: blur(100px)
+		justify-content: center
+		justify-items: center
+		align-content: center
+		z-index: 30
+		height: 100vh
+		width: 100vw
+		img 
+			width: 50vw
+		p 
+			color: $bone 
+			text-align: center 
+			font-size: 7vw
+		h1 
+			font-size: 15vw
+	header, article, footer 
+		display: none
+
+
+/*\SMALL MOBILE DEVICE STYLES\*/
+@media screen and (min-width: 240px) and (max-width: 359px) 
+	.desktop, .mobile 
+		display: none
+	.small-device 
+		display: grid
+	
+	header 
+		justify-content: space-between 
+		align-content: center 
+		padding: 5px
+		nav 
+			visibility: hidden
+			background-color: $darkPurple
+			grid-auto-flow: row
+			align-items: initial
+			align-content: space-evenly
+			position: absolute
+			top: 0px
+			height: 100vh
+			width: 100vw
+			text-align: center
+			opacity: 0
+			transition: opacity 0.5s
+			button 
+				background-color: transparent
+				border-color: transparent
+				color: $bone
+				font: bold 1em / 1.15em Elite, monospace
+				
+		img, #small-menu-btn 
+			height: 25vh
+		#small-menu-btn 
+			background-color: transparent
+			border-color: transparent
+			color: #ddd
+			justify-self: center
+			height: fit-content
+			padding: 0px
+			:hover 
+				color: $fulvous
+			:hover img
+				filter: drop-shadow(2px 2px 1px $fulvous)
+			figure 
+				margin: 0
+				display: grid
+				justify-items: center
+				align-items: center
+				align-content: center
+			img 
+				height: 50%
+		
+
+/*\MOBILE STYLES\*/
+@media screen and (min-width: 360px) and (max-width: 479px) 
+	header 
+		grid-auto-flow: row 
+		row-gap: 15px
+		.desktop, .small-device 
+			display: none
+		.mobile 
+			display: grid
+		#logo 
+			justify-self: center
+
+	nav 
+		justify-content: space-around
+
+	.to-top 
+		bottom: 10%
+
+
+
+/*\TABLET STYLES\*/
+@media screen and (min-width: 480px) and (max-width: 767px) 
+	header 
+		grid-template-columns: repeat(auto-fill, 50%)
+		grid-auto-flow: row
+		justify-content: space-evenly
+	
+	nav 
+		justify-content: space-around
+	
+	.to-top 
+		bottom: 5%
