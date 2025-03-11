@@ -94,7 +94,7 @@ html, body {
 }
 
 /*DISPLAY*/
-body, header, header nav, .content {
+body, header, .content {
   display: grid;
 }
 
@@ -103,11 +103,7 @@ body, header, header nav, .content {
 }
 
 /*GRID STYLES*/
-header nav {
-  align-content: center;
-}
-
-header, header nav {
+header {
   grid-auto-flow: column;
   align-items: center;
 }
@@ -156,6 +152,9 @@ html {
 
 a {
   text-decoration: none;
+}
+a :hover {
+  text-decoration: underline;
 }
 
 p {
@@ -257,53 +256,8 @@ footer #tagline {
     align-content: center;
     padding: 5px;
   }
-  header nav {
-    visibility: hidden;
-    background-color: #260c1a;
-    grid-auto-flow: row;
-    align-items: initial;
-    align-content: space-evenly;
-    position: absolute;
-    top: 0px;
-    height: 100vh;
-    width: 100vw;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.5s;
-  }
-  header nav button {
-    background-color: transparent;
-    border-color: transparent;
-    color: #e7decd;
-    font: bold 1em/1.15em Elite, monospace;
-  }
-  header img, header #small-menu-btn {
-    height: 25vh;
-  }
-  header #small-menu-btn {
-    background-color: transparent;
-    border-color: transparent;
-    color: #ddd;
-    justify-self: center;
-    height: -moz-fit-content;
-    height: fit-content;
-    padding: 0px;
-  }
-  header #small-menu-btn :hover {
-    color: #e98a15;
-  }
-  header #small-menu-btn :hover img {
-    filter: drop-shadow(2px 2px 1px #e98a15);
-  }
-  header #small-menu-btn figure {
-    margin: 0;
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    align-content: center;
-  }
-  header #small-menu-btn img {
-    height: 50%;
+  header img {
+    height: 15vh;
   }
 }
 /*\MOBILE STYLES\*/
@@ -321,9 +275,6 @@ footer #tagline {
   header #logo {
     justify-self: center;
   }
-  nav {
-    justify-content: space-around;
-  }
   .to-top {
     bottom: 10%;
   }
@@ -334,9 +285,6 @@ footer #tagline {
     grid-template-columns: repeat(auto-fill, 50%);
     grid-auto-flow: row;
     justify-content: space-evenly;
-  }
-  nav {
-    justify-content: space-around;
   }
   .to-top {
     bottom: 5%;

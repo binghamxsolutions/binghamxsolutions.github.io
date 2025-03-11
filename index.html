@@ -14,6 +14,7 @@
 		<script src="assets/scripts/xHeader.js"></script>
 		<script src="assets/scripts/xScroll.js" defer></script>
 		<script src="assets/scripts/xContactCard.js" defer></script>
+		<script src="assets/scripts/xRepos.js" defer></script>
 		<title>bingham x solutions</title>
 	</head>
 	
@@ -47,11 +48,12 @@
 		<div class="content">
 			<article>
 				<h2>Repos</h2>
-				
-				<ul>
-					<li><a href="https://github.com/binghamxsolutions/workOrderWebApp">workOrderWebApp</a></li>
-					<li><a href="https://github.com/binghamxsolutions/qreate">qreate</a></li>
-				</ul>
+
+				<table id="repo_table">
+					<tr><th>name</th><th>description</th><th>tags</th></tr>
+				</table>
+
+				<dl id="repo_list"></dl>
 			</article>		
 
 			<aside>

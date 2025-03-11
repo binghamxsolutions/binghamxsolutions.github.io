@@ -112,15 +112,13 @@ html, body
 	min-height: 100vh
 
 /*DISPLAY*/
-body, header, header nav, .content 
+body, header, .content 
 	display: grid
 .small-device, .mobile 
 	display: none
 
 /*GRID STYLES*/
-header nav 
-	align-content: center
-header, header nav 
+header
 	grid-auto-flow: column
 	align-items: center
 
@@ -162,6 +160,8 @@ html
 
 a 
 	text-decoration: none
+	:hover
+		text-decoration: underline
 
 p 
 	padding: 0% 20px
@@ -244,46 +244,9 @@ footer
 		justify-content: space-between 
 		align-content: center 
 		padding: 5px
-		nav 
-			visibility: hidden
-			background-color: $darkPurple
-			grid-auto-flow: row
-			align-items: initial
-			align-content: space-evenly
-			position: absolute
-			top: 0px
-			height: 100vh
-			width: 100vw
-			text-align: center
-			opacity: 0
-			transition: opacity 0.5s
-			button 
-				background-color: transparent
-				border-color: transparent
-				color: $bone
-				font: bold 1em / 1.15em Elite, monospace
 				
-		img, #small-menu-btn 
-			height: 25vh
-		#small-menu-btn 
-			background-color: transparent
-			border-color: transparent
-			color: #ddd
-			justify-self: center
-			height: fit-content
-			padding: 0px
-			:hover 
-				color: $fulvous
-			:hover img
-				filter: drop-shadow(2px 2px 1px $fulvous)
-			figure 
-				margin: 0
-				display: grid
-				justify-items: center
-				align-items: center
-				align-content: center
-			img 
-				height: 50%
+		img
+			height: 15vh
 		
 
 /*\MOBILE STYLES\*/
@@ -298,9 +261,6 @@ footer
 		#logo 
 			justify-self: center
 
-	nav 
-		justify-content: space-around
-
 	.to-top 
 		bottom: 10%
 
@@ -312,9 +272,6 @@ footer
 		grid-template-columns: repeat(auto-fill, 50%)
 		grid-auto-flow: row
 		justify-content: space-evenly
-	
-	nav 
-		justify-content: space-around
 	
 	.to-top 
 		bottom: 5%

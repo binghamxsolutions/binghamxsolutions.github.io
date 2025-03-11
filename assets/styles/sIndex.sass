@@ -31,8 +31,7 @@ section
 
 /*\GENERAL STYLES\*/
 body 
-	background: $brownSugar url(../media/wireframe.jpg) 100% 100% / cover fixed no-repeat 
-	backdrop-filter: blur(2px)
+	background-color: $brownSugar
 	grid-template-rows: max-content auto auto auto max-content max-content
 
 header 
@@ -67,8 +66,34 @@ aside
 article
 	background-color: #433a3a77 
 	border-radius: 0px 15px
-	ul
-		text-decoration: none
+	table
+		border-spacing: 20px
+		th
+			text-align: center
+		td
+			vertical-align: center
+	dl
+		margin: 15px
+		display: none
+		row-gap: 5px
+		dt
+			font-weight: bold
+		dd
+			font-style: italic				
+.tags
+	display: flex
+	flex-wrap: wrap
+	column-gap: 10px
+	justify-content: left
+	row-gap: 5px
+	.tag
+		background-color: $silver
+		display: grid
+		align-items: center
+		border-radius: 5px
+		padding: 5px
+		box-shadow: -1px -1px 3px $darkPurple
+		width: max-content
 
 aside, article
 	box-shadow: -2px -2px 3px $darkPurple
@@ -137,31 +162,14 @@ section
 
 /*\SMALL SCREEN STYLES\*/
 @media screen and (min-width: 240px) and (max-width: 359px) 
+	table
+		display: none
+	article dl
+		display: grid
 	section 
 		padding: 0px
 		p 
 			padding: 0px
-		.more-info 
-			justify-content: center
-			.contact-card 
-				width: 70vw 
-				padding: 10px 
-				animation: none
-				figure 
-					display: grid 
-					justify-items: center 
-					align-items: center
-					img 
-						width: 40vw 
-						height: 40vh
-
-
-/*\MOBILE STYLES\*/
-@media screen and (min-width: 360px) and (max-width: 479px) 
-	#hero #intro
-		backdrop-filter: blur(10px)
-		p
-			color: $ebony
 	.content
 		grid-template-columns: initial
 		grid-auto-flow: row
@@ -179,8 +187,39 @@ section
 			margin: 0px 5px
 
 
+/*\MOBILE STYLES\*/
+@media screen and (min-width: 360px) and (max-width: 479px) 
+	#hero #intro
+		backdrop-filter: blur(10px)
+		p
+			color: $ebony
+	.content
+		grid-template-columns: initial
+		grid-auto-flow: row
+		row-gap: 25px
+		table
+			display: none
+		article dl
+			display: grid
+	#networking
+		grid-template-columns: initial
+		grid-auto-flow: row
+		h3
+			text-align: center
+		.contact-card 
+			margin: 0px
+			animation: paused
+			padding-left: 0
+			padding-right: 0
+			margin: 0px 5px
+
+
 
 /*\TABLET STYLES\*/
 @media screen and (min-width: 480px) and (max-width: 767px) 
+	table
+		display: none
+	article dl
+		display: grid
 	#networking .contact-card 
 		animation: float 5s linear infinite
