@@ -146,6 +146,9 @@ html {
 .to-top :hover {
   background-color: #afa39d;
 }
+.to-top :hover img {
+  transform: translateY(5px);
+}
 .to-top img {
   height: 5vh;
 }
@@ -177,9 +180,6 @@ header img {
 header #logo:hover {
   transform: skewY(5deg);
   filter: drop-shadow(-2px -1px 3px #433a3a);
-}
-header #logo:hover .mobile {
-  display: none;
 }
 
 .content {
@@ -239,7 +239,7 @@ footer #tagline {
   .unsupported h1 {
     font-size: 15vw;
   }
-  header, article, footer {
+  header, article, footer, .to-top {
     display: none;
   }
 }
@@ -253,7 +253,6 @@ footer #tagline {
   }
   header {
     justify-content: space-between;
-    align-content: center;
     padding: 5px;
   }
   header img {
@@ -274,6 +273,9 @@ footer #tagline {
   }
   header #logo {
     justify-self: center;
+  }
+  header #logo :hover {
+    transform: none;
   }
   .to-top {
     bottom: 10%;

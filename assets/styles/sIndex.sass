@@ -50,7 +50,7 @@ h1, h2
 
 #hero
 	background: url(../media/pexels-eva-bronzini-8060220.jpg) center / cover fixed no-repeat
-	mask-image: linear-gradient(to bottom, #000 80%, transparent 100%)
+	mask-image: linear-gradient(to bottom, transparent 5%, #000 80%, transparent 100%)
 	text-align: center
 	display: grid
 	padding: 0px
@@ -73,19 +73,21 @@ article
 		td
 			vertical-align: center
 	dl
-		margin: 15px
 		display: none
+		margin: 15px
 		row-gap: 5px
 		dt
 			font-weight: bold
 		dd
-			font-style: italic				
+			font-style: italic	
 .tags
 	display: flex
 	flex-wrap: wrap
 	column-gap: 10px
 	justify-content: left
 	row-gap: 5px
+	padding: 0			
+
 	.tag
 		background-color: $silver
 		display: grid
@@ -100,6 +102,9 @@ aside, article
 
 section 
 	padding: 15px
+
+.pending
+	font-style: italic
 
 #networking
 	display: grid
@@ -158,6 +163,10 @@ section
 			border-radius: 50%
 			border: double $ebony 5px
 		
+/*UNSUPPORTED DEVICES*/
+@media screen and (max-width: 239px)
+	#hero, #networking, .content
+		display: none
 
 
 /*\SMALL SCREEN STYLES\*/
@@ -168,7 +177,7 @@ section
 		display: grid
 	section 
 		padding: 0px
-		p 
+		p
 			padding: 0px
 	.content
 		grid-template-columns: initial
@@ -190,7 +199,7 @@ section
 /*\MOBILE STYLES\*/
 @media screen and (min-width: 360px) and (max-width: 479px) 
 	#hero #intro
-		backdrop-filter: blur(10px)
+		backdrop-filter: blur(15px)
 		p
 			color: $ebony
 	.content

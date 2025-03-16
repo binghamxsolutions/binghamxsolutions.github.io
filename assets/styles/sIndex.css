@@ -146,12 +146,18 @@ html {
 .to-top :hover {
   background-color: #afa39d;
 }
+.to-top :hover img {
+  transform: translateY(5px);
+}
 .to-top img {
   height: 5vh;
 }
 
 a {
   text-decoration: none;
+}
+a :hover {
+  text-decoration: underline;
 }
 
 p {
@@ -174,9 +180,6 @@ header img {
 header #logo:hover {
   transform: skewY(5deg);
   filter: drop-shadow(-2px -1px 3px #433a3a);
-}
-header #logo:hover .mobile {
-  display: none;
 }
 
 .content {
@@ -236,7 +239,7 @@ footer #tagline {
   .unsupported h1 {
     font-size: 15vw;
   }
-  header, article, footer {
+  header, article, footer, .to-top {
     display: none;
   }
 }
@@ -250,7 +253,6 @@ footer #tagline {
   }
   header {
     justify-content: space-between;
-    align-content: center;
     padding: 5px;
   }
   header img {
@@ -271,6 +273,9 @@ footer #tagline {
   }
   header #logo {
     justify-self: center;
+  }
+  header #logo :hover {
+    transform: none;
   }
   .to-top {
     bottom: 10%;
@@ -340,8 +345,8 @@ h1, h2 {
 
 #hero {
   background: url(../media/pexels-eva-bronzini-8060220.jpg) center/cover fixed no-repeat;
-  -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
-          mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 5%, #000 80%, transparent 100%);
+          mask-image: linear-gradient(to bottom, transparent 5%, #000 80%, transparent 100%);
   text-align: center;
   display: grid;
   padding: 0px;
@@ -373,8 +378,8 @@ article table td {
   vertical-align: center;
 }
 article dl {
-  margin: 15px;
   display: none;
+  margin: 15px;
   row-gap: 5px;
 }
 article dl dt {
@@ -391,6 +396,7 @@ article dl dd {
        column-gap: 10px;
   justify-content: left;
   row-gap: 5px;
+  padding: 0;
 }
 .tags .tag {
   background-color: #afa39d;
@@ -409,6 +415,10 @@ aside, article {
 
 section {
   padding: 15px;
+}
+
+.pending {
+  font-style: italic;
 }
 
 #networking {
@@ -483,6 +493,12 @@ section {
   border: double #5b5941 5px;
 }
 
+/*UNSUPPORTED DEVICES*/
+@media screen and (max-width: 239px) {
+  #hero, #networking, .content {
+    display: none;
+  }
+}
 /*\SMALL SCREEN STYLES\*/
 @media screen and (min-width: 240px) and (max-width: 359px) {
   table {
@@ -520,8 +536,8 @@ section {
 /*\MOBILE STYLES\*/
 @media screen and (min-width: 360px) and (max-width: 479px) {
   #hero #intro {
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
   }
   #hero #intro p {
     color: #5b5941;

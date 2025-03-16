@@ -155,6 +155,8 @@ html
 	justify-self: right
 	:hover 
 		background-color: $silver
+		img 
+			transform: translateY(5px)
 	img 
 		height: 5vh
 
@@ -180,8 +182,6 @@ header
 	#logo:hover 
 		transform: skewY(5deg)
 		filter: drop-shadow(-2px -1px 3px $vanDyke)
-		.mobile 
-			display: none
 
 .content 
 	grid-template-columns: 75% auto
@@ -229,7 +229,7 @@ footer
 			font-size: 7vw
 		h1 
 			font-size: 15vw
-	header, article, footer 
+	header, article, footer, .to-top 
 		display: none
 
 
@@ -242,7 +242,7 @@ footer
 	
 	header 
 		justify-content: space-between 
-		align-content: center 
+		//align-content: center 
 		padding: 5px
 				
 		img
@@ -260,6 +260,8 @@ footer
 			display: grid
 		#logo 
 			justify-self: center
+			:hover
+				transform: none
 
 	.to-top 
 		bottom: 10%
