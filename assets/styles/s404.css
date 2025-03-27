@@ -1,0 +1,324 @@
+/*\GLOBAL VALUES\*/
+/**COLORS*/
+/*primary colors*/
+/*secondary colors*/
+/*accent colors*/
+/*background colors*/
+/*logotype*/
+@font-face {
+  font-family: Elite;
+  src: url(fonts//Special_Elite//SpecialElite-Regular.ttf);
+}
+/*headings*/
+@font-face {
+  font-family: Lv1;
+  src: url(fonts//Poppins//Poppins-Black.ttf);
+}
+h1 {
+  font: normal 48px/1em Lv1, san-serif;
+}
+
+@font-face {
+  font-family: Lv2;
+  src: url(fonts//Poppins//Poppins-SemiBold.ttf);
+}
+h2 {
+  font: normal 36px/1em Lv2, san-serif;
+}
+
+@font-face {
+  font-family: Lv3;
+  src: url(fonts//Poppins//Poppins-MediumItalic.ttf);
+}
+h3 {
+  font: normal 28px/1em Lv3, san-serif;
+}
+
+@font-face {
+  font-family: Lv4;
+  src: url(fonts//Poppins//Poppins-Regular.ttf);
+}
+h4 {
+  font: normal 24px/1em Lv4, san-serif;
+}
+
+@font-face {
+  font-family: Lv5;
+  src: url(fonts//Poppins//Poppins-LightItalic.ttf);
+}
+h5 {
+  font: normal 20px/1em Lv5, san-serif;
+}
+
+@font-face {
+  font-family: Lv6;
+  src: url(fonts//Poppins//Poppins-ExtraLight.ttf);
+}
+h6 {
+  font: normal 18px/1em Lv6, san-serif;
+}
+
+/*body*/
+@font-face {
+  font-family: Gentium;
+  src: url(fonts//Gentium_Book_Plus//GentiumBookPlus-Regular.ttf);
+}
+body {
+  font: normal 16px/1em Gentium, serif;
+}
+
+/**DEPRECATED*/
+@font-face {
+  font-family: Typed;
+  src: url(..\\fonts\\Cutive_Mono\\CutiveMono-Regular.ttf);
+}
+@font-face {
+  font-family: Name;
+  src: url(..\\fonts\\Dr_Sugiyama\\DrSugiyama-Regular.ttf);
+}
+@font-face {
+  font-family: Label;
+  src: url(..\\fonts\\Special_Elite\\SpecialElite-Regular.ttf);
+}
+@font-face {
+  font-family: Header;
+  src: url(..\\fonts\\Love_Light\\LoveLight-Regular.ttf);
+}
+@font-face {
+  font-family: Glitch;
+  src: url(..\\fonts\\Rubik_Glitch\\RubikGlitch-Regular.ttf);
+}
+/*\SHARED STYLES\*/
+html, body {
+  min-height: 100vh;
+}
+
+/*DISPLAY*/
+body, header, .content {
+  display: grid;
+}
+
+.small-device, .mobile {
+  display: none;
+}
+
+/*GRID STYLES*/
+header {
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+body {
+  grid-template-rows: max-content auto max-content;
+}
+
+/*Alignment*/
+h1, footer {
+  text-align: center;
+}
+
+body, footer {
+  margin: 0px;
+}
+
+/*\GENERAL STYLES\*/
+html {
+  scroll-behavior: smooth;
+}
+
+.to-top {
+  display: none;
+  position: sticky;
+  background-color: #e7decd;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 15px;
+  border-radius: 10px;
+  bottom: 75px;
+  right: 1%;
+  box-shadow: 2px 2px 5px #000;
+  color: #000;
+  z-index: 10;
+  width: -moz-fit-content;
+  width: fit-content;
+  justify-self: right;
+}
+.to-top :hover {
+  background-color: #afa39d;
+}
+.to-top :hover img {
+  transform: translateY(5px);
+}
+.to-top img {
+  height: 5vh;
+}
+
+a {
+  text-decoration: none;
+}
+a :hover {
+  text-decoration: underline;
+}
+
+p {
+  padding: 0% 20px;
+}
+
+header {
+  background-color: #260c1a;
+  position: sticky;
+  top: 0px;
+  padding: 15px;
+  z-index: 10;
+  box-shadow: 0px 0px 3px #000;
+  justify-content: center;
+}
+header img {
+  height: 20vh;
+  transition: 2s;
+}
+header #logo:hover {
+  transform: skewY(5deg);
+  filter: drop-shadow(-2px -1px 3px #433a3a);
+}
+
+.content {
+  grid-template-columns: 75% auto;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+}
+.content h2 {
+  text-align: center;
+}
+
+footer {
+  background-color: #260c1a;
+  color: #e7decd;
+  display: grid;
+  justify-content: space-around;
+  grid-auto-flow: row;
+  align-items: center;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+footer #tagline {
+  color: #e8b471;
+}
+
+.unsupported {
+  display: none;
+}
+
+/*UNSUPPORTED DEVICES*/
+@media screen and (max-width: 239px) {
+  body {
+    overflow: hidden;
+  }
+  .unsupported {
+    display: grid;
+    position: sticky;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4666666667);
+    -webkit-backdrop-filter: blur(100px);
+            backdrop-filter: blur(100px);
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    z-index: 30;
+    height: 100vh;
+    width: 100vw;
+  }
+  .unsupported img {
+    width: 50vw;
+  }
+  .unsupported p {
+    color: #e7decd;
+    text-align: center;
+    font-size: 7vw;
+  }
+  .unsupported h1 {
+    font-size: 15vw;
+  }
+  header, article, footer, .to-top {
+    display: none;
+  }
+}
+/*\SMALL MOBILE DEVICE STYLES\*/
+@media screen and (min-width: 240px) and (max-width: 359px) {
+  .desktop, .mobile {
+    display: none;
+  }
+  .small-device {
+    display: grid;
+  }
+  header {
+    justify-content: space-between;
+    padding: 5px;
+  }
+  header img {
+    height: 15vh;
+  }
+}
+/*\MOBILE STYLES\*/
+@media screen and (min-width: 360px) and (max-width: 479px) {
+  header {
+    grid-auto-flow: row;
+    row-gap: 15px;
+  }
+  header .desktop, header .small-device {
+    display: none;
+  }
+  header .mobile {
+    display: grid;
+  }
+  header #logo {
+    justify-self: center;
+  }
+  header #logo :hover {
+    transform: none;
+  }
+  .to-top {
+    bottom: 10%;
+  }
+}
+/*\TABLET STYLES\*/
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  header {
+    grid-template-columns: repeat(auto-fill, 50%);
+    grid-auto-flow: row;
+    justify-content: space-evenly;
+  }
+  .to-top {
+    bottom: 5%;
+  }
+}
+html {
+  background: #ae705f url(../media/pexels-aleksandar-pasaric-1820770.jpg) center/cover no-repeat;
+}
+
+body {
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+}
+
+h1 {
+  color: #e7decd;
+  filter: drop-shadow(-1px -2px 3px #260c1a);
+}
+
+article p {
+  color: #e98a15;
+  text-align: center;
+}
+
+#logo {
+  height: 25vh;
+}
+
+#home-link {
+  justify-self: center;
+}
+
+footer {
+  background-color: transparent;
+}/*# sourceMappingURL=s404.css.map */
