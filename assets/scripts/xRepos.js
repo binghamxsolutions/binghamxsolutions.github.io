@@ -1,7 +1,7 @@
 /**Provides details on completed repo projects on Github. */
 let repos = [
 	{"name": "workOrderWebApp", "description": "a simple work order overview interface", "tags": ["webapp", "angular", ".net core", "typescript", "css"], "link": "https://github.com/binghamxsolutions/workOrderWebApp"},
-	{"name": "qreate (private)", "description": "an offline qr code generator", "tags": ["mobile app", "flutter", "dart", "android"], "link" : null},
+	{"name": "qreate", "description": "an offline qr code generator", "tags": ["mobile app", "flutter", "dart", "android", "playstore"], "link" : "https://github.com/binghamxsolutions/qreate"},
 ];
 
 /**Creates a table with the `repo` details */
