@@ -2,7 +2,7 @@
 let repos = [
 	{"name": "workOrderWebApp", "description": "a simple work order overview interface", "tags": ["webapp", "angular", ".net core", "typescript", "css"], "link": "https://github.com/binghamxsolutions/workOrderWebApp"},
 	{"name": "qreate", "description": "an offline qr code generator", "tags": ["mobile app", "flutter", "dart", "android", "playstore"], "link" : "https://github.com/binghamxsolutions/qreate"},
-	{"name": "epoch (private)", "description": "a simple stopwatch app", "tags": ["mobile app", "flutter", "dart", "android",], "link" : ""}
+	{"name": "epoch (private)", "description": "a simple stopwatch app", "tags": ["mobile app", "flutter", "dart", "android",], "link" : null}
 ];
 
 /**Creates a table with the `repo` details */
