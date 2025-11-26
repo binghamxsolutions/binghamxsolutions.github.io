@@ -1,9 +1,10 @@
 /**Provides details on completed repo projects on Github. */
 let repos = [
-	{"name": "workOrderWebApp", "description": "a simple work order overview interface", "tags": ["webapp", "angular", ".net core", "typescript", "css"], "link": "https://github.com/binghamxsolutions/workOrderWebApp"},
-	{"name": "qreate", "description": "an offline qr code generator", "tags": ["mobile app", "flutter", "dart", "android", "play store"], "link" : "https://github.com/binghamxsolutions/qreate"},
-	{"name": "epoch (private)", "description": "a simple stopwatch app", "tags": ["mobile app", "flutter", "dart", "android", "kotlin"], "link" : null},
-	{"name" : "reversion", "description" : "a release note update utility", "tags": ["desktop app", "flutter", "dart", "sqflite"], "link" : "https://github.com/binghamxsolutions/reversion"}
+	{"name" : "workOrderWebApp", "description" : "a simple work order overview interface", "tags" : ["webapp", "angular", ".net core", "typescript", "css"], "link" : "https://github.com/binghamxsolutions/workOrderWebApp"},
+	{"name" : "qreate", "description" : "an offline qr code generator", "tags" : ["mobile app", "flutter", "dart", "android", "play store"], "link" : "https://github.com/binghamxsolutions/qreate"},
+	{"name" : "epoch (private)", "description" : "a simple stopwatch app", "tags" : ["mobile app", "desktop app", "flutter", "dart", "android", "kotlin"], "link" : null},
+	{"name" : "reversion", "description" : "a release note update utility", "tags" : ["desktop app", "flutter", "dart", "sqflite"], "link" : "https://github.com/binghamxsolutions/reversion"},
+	{"name" : "inphaze (private)", "description" : "another to-do list", "tags" : ["mobile app", "flutter", "dart", "sqflite", "kotlin"], "link" : null},
 ];
 
 /**Creates a table with the `repo` details */
